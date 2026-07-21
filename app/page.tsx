@@ -1,23 +1,26 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 type Sex="Female"|"Male"|"Prefer not to say"; type Level="Beginner"|"Intermediate"|"Advanced"; type Readiness="Recover"|"Ready"|"Push"; type Tab="Today"|"Plan"|"Community"|"Progress";
-type Move={name:string;focus:string;base:number;image:string;video:string;credit?:string;cue:string;detail:string};
+type Move={name:string;focus:string;base:number;image?:string;video:string;credit?:string;cue:string;detail:string};
 const M:Record<string,Move>={
  push:{name:"Incline push-up",focus:"Chest · arms",base:35,image:"/pushup.jpg",video:"/pushup-loop.mp4",cue:"Body in one long line",detail:"Hands just wider than shoulders. Lower with control, then press away."},
  squat:{name:"Bodyweight squat",focus:"Quads · glutes",base:40,image:"/squat.jpg",video:"/squat-loop.mp4",cue:"Knees track over toes",detail:"Sit hips back and down. Keep your whole foot grounded and chest tall."},
  plank:{name:"Forearm plank",focus:"Deep core · shoulders",base:30,image:"/plank.jpg",video:"/plank-loop.mp4",cue:"Brace, breathe, stay long",detail:"Stack elbows under shoulders and keep your neck neutral."},
  bridge:{name:"Glute bridge",focus:"Glutes · hamstrings",base:40,image:"/hero-calisthenics.jpg",video:"/bridge-loop.mp4",cue:"Lift from the hips",detail:"Press through heels. Pause at the top without arching your lower back."},
- calfRaise:{name:"Standing calf raise",focus:"Calves · ankle support",base:35,image:"/calf-raise-guide.jpg",video:"https://wger.de/media/exercise-video/622/35b7b625-77fd-4c09-8c57-3ad0f2f23175.MOV",credit:"WGER · real-person demo",cue:"Rise tall, lower slowly",detail:"Use support if needed and keep weight even across both feet."}
+ calfRaise:{name:"Standing calf raise",focus:"Calves · ankle support",base:35,image:"/calf-raise-guide.jpg",video:"https://wger.de/media/exercise-video/622/35b7b625-77fd-4c09-8c57-3ad0f2f23175.MOV",credit:"WGER · real-person demo",cue:"Rise tall, lower slowly",detail:"Use support if needed and keep weight even across both feet."},
+ deadbug:{name:"Dead bug",focus:"Deep core control",base:35,video:"/dead-bug-real.mp4",credit:"Cureus open-access supplement · CC BY",cue:"Lower back stays heavy",detail:"Move opposite arm and leg slowly. Exhale as they reach away."},
+ birdDog:{name:"Bird dog",focus:"Core · back control",base:35,video:"/bird-dog-real.mp4",credit:"Frontiers open-access supplement · CC BY",cue:"Reach without twisting",detail:"Extend opposite arm and leg while keeping hips level."},
+ sidePlank:{name:"Side plank",focus:"Obliques · waist",base:25,video:"/side-plank-real.mp4",credit:"Frontiers open-access supplement · CC BY",cue:"Lift the underside waist",detail:"Stack shoulder over elbow and keep your body long."}
 };const goals={
- "Full body":{icon:"◎",title:"Full-body foundation",desc:"Balanced strength from head to toe.",keys:["push","squat","plank","bridge","calfRaise"]},
- "Enhanced core":{icon:"◉",title:"Core control",desc:"Build a stronger, steadier centre.",keys:["plank","bridge","push"]},
+ "Full body":{icon:"◎",title:"Full-body foundation",desc:"Balanced strength from head to toe.",keys:["push","squat","plank","bridge","deadbug","birdDog","calfRaise"]},
+ "Enhanced core":{icon:"◉",title:"Core control",desc:"Build a stronger, steadier centre.",keys:["plank","deadbug","sidePlank","birdDog","bridge"]},
  "Knee strength":{icon:"◇",title:"Knee support",desc:"Low-impact strength around knees and ankles.",keys:["squat","bridge","calfRaise"]},
- "Upper body":{icon:"↑",title:"Upper-body builder",desc:"Chest, shoulders, back and trunk stability.",keys:["push","plank"]},
+ "Upper body":{icon:"↑",title:"Upper-body builder",desc:"Chest, shoulders, back and trunk stability.",keys:["push","plank","birdDog","sidePlank"]},
  "Lower body":{icon:"↓",title:"Lower-body power",desc:"Legs, glutes, hips and balance.",keys:["squat","bridge","calfRaise"]},
  "Arm strength":{icon:"↗",title:"Arm strength",desc:"Progressive pushing and shoulder stability.",keys:["push","plank"]}
 };type Goal=keyof typeof goals; const ages=["13–17","18–29","30–44","45–59","60+"];
 function workTime(base:number,age:string,level:Level,readiness:Readiness){const a:Record<string,number>={"13–17":.9,"18–29":1,"30–44":1,"45–59":.9,"60+":.78},l:Record<Level,number>={Beginner:.82,Intermediate:1,Advanced:1.18},r:Record<Readiness,number>={Recover:.72,Ready:1,Push:1.12};return Math.max(20,Math.round(base*a[age]*l[level]*r[readiness]/5)*5)}
-function MovementMedia({move,large=false}:{move:Move;large?:boolean}){return <div className={`movement-media ${large?"large":""}`}><video src={move.video} poster={move.image} autoPlay loop muted playsInline preload={large?"auto":"metadata"} aria-label={`${move.name} real-person movement demonstration`}/><div className="media-shade"/>{move.credit&&<span className="media-credit">{move.credit}</span>}<span className="real-badge"><i/>REAL PERSON VIDEO</span><span className="loop-badge">↻ LOOP</span></div>}
+function MovementMedia({move,large=false}:{move:Move;large?:boolean}){return <div className={`movement-media ${large?"large":""}`}><video src={move.video} poster={move.image || undefined} autoPlay loop muted playsInline preload={large?"auto":"metadata"} aria-label={`${move.name} real-person movement demonstration`}/><div className="media-shade"/>{move.credit&&<span className="media-credit">{move.credit}</span>}<span className="real-badge"><i/>REAL PERSON VIDEO</span><span className="loop-badge">↻ LOOP</span></div>}
 export default function Home(){
  const[goal,setGoal]=useState<Goal>("Full body"),[age,setAge]=useState("30–44"),[sex,setSex]=useState<Sex>("Prefer not to say"),[level,setLevel]=useState<Level>("Beginner"),[readiness,setReadiness]=useState<Readiness>("Ready");
  const[profile,setProfile]=useState(false),[adapt,setAdapt]=useState(false),[session,setSession]=useState(false),[finish,setFinish]=useState(false),[showWhy,setShowWhy]=useState(false),[running,setRunning]=useState(false),[active,setActive]=useState(0),[left,setLeft]=useState(0),[tab,setTab]=useState<Tab>("Today"),[targetMinutes,setTargetMinutes]=useState(20),[quiet,setQuiet]=useState(false),[caption,setCaption]=useState(true),[audioHints,setAudioHints]=useState(true),[kudos,setKudos]=useState(18);
