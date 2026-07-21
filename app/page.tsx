@@ -1,37 +1,23 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 type Sex="Female"|"Male"|"Prefer not to say"; type Level="Beginner"|"Intermediate"|"Advanced"; type Readiness="Recover"|"Ready"|"Push"; type Tab="Today"|"Plan"|"Community"|"Progress";
-type Move={name:string;focus:string;base:number;image:string;video?:string;kind?:"real"|"animated";credit?:string;cue:string;detail:string};
+type Move={name:string;focus:string;base:number;image:string;video:string;credit?:string;cue:string;detail:string};
 const M:Record<string,Move>={
  push:{name:"Incline push-up",focus:"Chest · arms",base:35,image:"/pushup.jpg",video:"/pushup-loop.mp4",cue:"Body in one long line",detail:"Hands just wider than shoulders. Lower with control, then press away."},
  squat:{name:"Bodyweight squat",focus:"Quads · glutes",base:40,image:"/squat.jpg",video:"/squat-loop.mp4",cue:"Knees track over toes",detail:"Sit hips back and down. Keep your whole foot grounded and chest tall."},
  plank:{name:"Forearm plank",focus:"Deep core · shoulders",base:30,image:"/plank.jpg",video:"/plank-loop.mp4",cue:"Brace, breathe, stay long",detail:"Stack elbows under shoulders and keep your neck neutral."},
  bridge:{name:"Glute bridge",focus:"Glutes · hamstrings",base:40,image:"/hero-calisthenics.jpg",video:"/bridge-loop.mp4",cue:"Lift from the hips",detail:"Press through heels. Pause at the top without arching your lower back."},
- deadbug:{name:"Dead bug",focus:"Deep core control",base:35,image:"/deadbug-guide.png",video:"/deadbug-guide.mp4",kind:"animated",credit:"BODYWISE GUIDE",cue:"Lower back stays heavy",detail:"Move opposite arm and leg slowly. Exhale as they reach away."},
- swimmer:{name:"Prone swimmer",focus:"Back · posture",base:30,image:"/swimmer-guide.png",video:"/swimmer-guide.mp4",kind:"animated",credit:"BODYWISE GUIDE",cue:"Reach long, not high",detail:"Keep your gaze down and sweep your arms slowly."},
- chairSquat:{name:"Supported chair squat",focus:"Knees · quads",base:35,image:"/chair-squat-guide.png",video:"/chair-squat-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Tap the chair softly",detail:"Use a stable chair. Lower only through a comfortable, pain-free range."},
- wallSit:{name:"Wall sit",focus:"Knee endurance",base:25,image:"/wall-sit-guide.png",video:"/wall-sit-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Press your back to the wall",detail:"Keep knees comfortable and hold higher if a deep angle causes strain."},
- reverseLunge:{name:"Supported reverse lunge",focus:"Knees · balance",base:30,image:"/reverse-lunge-guide.jpg",video:"/reverse-lunge-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Step back, drop straight down",detail:"Hold a wall or chair. Keep the front knee tracking over the foot."},
- calfRaise:{name:"Standing calf raise",focus:"Calves · ankle support",base:35,image:"/calf-raise-guide.jpg",video:"https://wger.de/media/exercise-video/622/35b7b625-77fd-4c09-8c57-3ad0f2f23175.MOV",credit:"WGER · CC",cue:"Rise tall, lower slowly",detail:"Use support if needed and keep weight even across both feet."},
- kneePush:{name:"Kneeling push-up",focus:"Chest · arms",base:30,image:"/knee-pushup-guide.png",video:"/knee-pushup-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Hips move with shoulders",detail:"Keep a straight line from knees through hips to shoulders."},
- shoulderTap:{name:"Plank shoulder tap",focus:"Shoulders · core",base:30,image:"/shoulder-tap-guide.jpg",video:"/shoulder-tap-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Keep hips quiet",detail:"Widen your feet and tap the opposite shoulder without rotating."},
- sidePlank:{name:"Kneeling side plank",focus:"Obliques · waist",base:25,image:"/side-plank-guide.jpg",video:"/side-plank-guide.mp4",kind:"animated",credit:"WIKIMEDIA · CC",cue:"Lift the underside waist",detail:"Stack shoulder over elbow and keep the lower knee grounded."},
- birdDog:{name:"Bird dog",focus:"Core · back control",base:35,image:"/bird-dog-guide.png",video:"/bird-dog-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Reach without twisting",detail:"Extend opposite arm and leg while keeping hips level."},
- tricepPush:{name:"Narrow push-up",focus:"Triceps · chest",base:25,image:"/narrow-pushup-guide.jpg",video:"/narrow-pushup-guide.mp4",kind:"animated",credit:"WIKIMEDIA · CC",cue:"Elbows brush the ribs",detail:"Use an incline or knees to keep every repetition controlled."},
- hollowHold:{name:"Tucked hollow hold",focus:"Abdominals",base:25,image:"/hollow-hold-guide.png",video:"/hollow-hold-guide.mp4",kind:"animated",credit:"WGER · CC",cue:"Ribs down, breathe softly",detail:"Keep knees tucked and lower back gently connected to the floor."},
- sideLeg:{name:"Standing side leg raise",focus:"Outer hips · balance",base:35,image:"/side-leg-guide.png",video:"/side-leg-guide.mp4",kind:"animated",credit:"BODYWISE GUIDE",cue:"Stay tall through the spine",detail:"Use support and move the leg without leaning your torso."}
-};
-const goals={
- "Full body":{icon:"◎",title:"Full-body foundation",desc:"Balanced strength from head to toe.",keys:["push","squat","plank","bridge","deadbug","swimmer"]},
- "Enhanced core":{icon:"◉",title:"Core control",desc:"Build a stronger, steadier centre.",keys:["plank","deadbug","sidePlank","birdDog","bridge","hollowHold"]},
- "Knee strength":{icon:"◇",title:"Knee support",desc:"Low-impact strength around knees and ankles.",keys:["chairSquat","wallSit","reverseLunge","calfRaise","bridge"]},
- "Upper body":{icon:"↑",title:"Upper-body builder",desc:"Chest, shoulders, back and trunk stability.",keys:["push","kneePush","shoulderTap","plank","swimmer"]},
- "Lower body":{icon:"↓",title:"Lower-body power",desc:"Legs, glutes, hips and balance.",keys:["squat","bridge","reverseLunge","calfRaise","sideLeg"]},
- "Arm strength":{icon:"↗",title:"Arm strength",desc:"Progressive pushing and shoulder stability.",keys:["push","kneePush","tricepPush","shoulderTap","plank"]}
-};
-type Goal=keyof typeof goals; const ages=["13–17","18–29","30–44","45–59","60+"];
+ calfRaise:{name:"Standing calf raise",focus:"Calves · ankle support",base:35,image:"/calf-raise-guide.jpg",video:"https://wger.de/media/exercise-video/622/35b7b625-77fd-4c09-8c57-3ad0f2f23175.MOV",credit:"WGER · real-person demo",cue:"Rise tall, lower slowly",detail:"Use support if needed and keep weight even across both feet."}
+};const goals={
+ "Full body":{icon:"◎",title:"Full-body foundation",desc:"Balanced strength from head to toe.",keys:["push","squat","plank","bridge","calfRaise"]},
+ "Enhanced core":{icon:"◉",title:"Core control",desc:"Build a stronger, steadier centre.",keys:["plank","bridge","push"]},
+ "Knee strength":{icon:"◇",title:"Knee support",desc:"Low-impact strength around knees and ankles.",keys:["squat","bridge","calfRaise"]},
+ "Upper body":{icon:"↑",title:"Upper-body builder",desc:"Chest, shoulders, back and trunk stability.",keys:["push","plank"]},
+ "Lower body":{icon:"↓",title:"Lower-body power",desc:"Legs, glutes, hips and balance.",keys:["squat","bridge","calfRaise"]},
+ "Arm strength":{icon:"↗",title:"Arm strength",desc:"Progressive pushing and shoulder stability.",keys:["push","plank"]}
+};type Goal=keyof typeof goals; const ages=["13–17","18–29","30–44","45–59","60+"];
 function workTime(base:number,age:string,level:Level,readiness:Readiness){const a:Record<string,number>={"13–17":.9,"18–29":1,"30–44":1,"45–59":.9,"60+":.78},l:Record<Level,number>={Beginner:.82,Intermediate:1,Advanced:1.18},r:Record<Readiness,number>={Recover:.72,Ready:1,Push:1.12};return Math.max(20,Math.round(base*a[age]*l[level]*r[readiness]/5)*5)}
-function MovementMedia({move,large=false}:{move:Move;large?:boolean}){return <div className={`movement-media ${large?"large":""}`}>{move.video?<video src={move.video} poster={move.image} autoPlay loop muted playsInline preload={large?"auto":"metadata"} aria-label={`${move.name} movement demonstration`}/>:<img src={move.image} alt={`${move.name} correct exercise position`} loading={large?"eager":"lazy"}/>}<div className="media-shade"/>{move.credit&&<span className="media-credit">{move.credit}</span>}<span className="real-badge"><i/>{move.video?(move.kind==="animated"?"ANIMATED POSITION GUIDE":"REAL MOVEMENT"):"POSITION GUIDE"}</span>{move.video&&<span className="loop-badge">↻ LOOP</span>}</div>}
+function MovementMedia({move,large=false}:{move:Move;large?:boolean}){return <div className={`movement-media ${large?"large":""}`}><video src={move.video} poster={move.image} autoPlay loop muted playsInline preload={large?"auto":"metadata"} aria-label={`${move.name} real-person movement demonstration`}/><div className="media-shade"/>{move.credit&&<span className="media-credit">{move.credit}</span>}<span className="real-badge"><i/>REAL PERSON VIDEO</span><span className="loop-badge">↻ LOOP</span></div>}
 export default function Home(){
  const[goal,setGoal]=useState<Goal>("Full body"),[age,setAge]=useState("30–44"),[sex,setSex]=useState<Sex>("Prefer not to say"),[level,setLevel]=useState<Level>("Beginner"),[readiness,setReadiness]=useState<Readiness>("Ready");
  const[profile,setProfile]=useState(false),[adapt,setAdapt]=useState(false),[session,setSession]=useState(false),[finish,setFinish]=useState(false),[showWhy,setShowWhy]=useState(false),[running,setRunning]=useState(false),[active,setActive]=useState(0),[left,setLeft]=useState(0),[tab,setTab]=useState<Tab>("Today"),[targetMinutes,setTargetMinutes]=useState(20),[quiet,setQuiet]=useState(false),[caption,setCaption]=useState(true),[audioHints,setAudioHints]=useState(true),[kudos,setKudos]=useState(18);
