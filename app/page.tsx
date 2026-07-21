@@ -47,58 +47,95 @@ const goals={
 };
 type Goal=keyof typeof goals; const ages=["13–17","18–29","30–44","45–59","60+"]; const nav:Tab[]=["Today","Plan","Community","Progress"];
 const vault=[
- {name:"Wall push-up",move:"wallPush",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Counter push-up",move:"wallPush",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Incline push-up",move:"push",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Slow negative push-up",move:"slowPush",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Pause push-up",move:"slowPush",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"High plank hold",move:"plank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Knee plank",move:"kneePlank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Forearm plank",move:"plank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Long-lever plank",move:"longPlank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Plank shoulder tap prep",move:"plankTap",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bear crawl hold",move:"bearHold",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Sit-to-stand",move:"sitStand",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Chair tap squat",move:"sitStand",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bodyweight squat",move:"squat",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Tempo squat",move:"squat",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Squat pulse",move:"squatPulse",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Squat-to-reach",move:"squatReach",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Quiet high-knee march",move:"quietMarch",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Glute bridge hold",move:"bridge",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Marching bridge",move:"quietMarch",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Kickstand bridge",move:"squat",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Single-leg bridge prep",move:"singleBridge",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Supported calf raise",move:"calfRaise",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Slow eccentric calf raise",move:"calfRaise",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Single-leg calf prep",move:"calfRaise",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Ankle rockers",move:"ankleRocks",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Heel taps",move:"heelTaps",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bent-knee brace",move:"heelTaps",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Dead bug",move:"deadbug",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Dead bug pause",move:"deadbug",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Long-lever dead bug",move:"longDeadbug",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Short side plank",move:"sidePlank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Side plank hold",move:"sidePlank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Side plank reach",move:"sidePlank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Side plank rotation prep",move:"sidePlank",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Three-point hold",move:"birdDog",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bird dog",move:"birdDog",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bird dog crunch",move:"birdDogCrunch",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bird dog hover",move:"birdDog",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Quadruped brace",move:"bearHold",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Recovery reset flow",move:"flowReset",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Bridge breathing",move:"bridge",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Mobility squat flow",move:"squatReach",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Calisthenics skill flow",move:"skillPrep",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"L-sit tuck prep",move:"skillPrep",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Crow-prep balance",move:"skillPrep",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Quiet conditioning circuit",move:"quietMarch",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Balance reset",move:"flowReset",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Posture builder",move:"birdDog",note:"Real-human visual guide mapped to its closest verified movement pattern."},
- {name:"Skill prep flow",move:"skillPrep",note:"Real-human visual guide mapped to its closest verified movement pattern."}
+ {name:"Wall push-up",move:"wallPush",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Counter push-up",move:"wallPush",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Incline push-up",move:"push",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Slow negative push-up",move:"slowPush",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Pause push-up",move:"slowPush",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"High plank hold",move:"plank",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Knee plank",move:"kneePlank",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Forearm plank",move:"plank",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Long-lever plank",move:"longPlank",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Plank shoulder tap prep",move:"plankTap",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bear crawl hold",move:"bearHold",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Sit-to-stand",move:"sitStand",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Chair tap squat",move:"sitStand",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bodyweight squat",move:"squat",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Tempo squat",move:"squat",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Squat pulse",move:"squatPulse",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Squat-to-reach",move:"squatReach",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Quiet high-knee march",move:"quietMarch",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Glute bridge hold",move:"bridge",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Marching bridge",move:"bridgeMarch",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Kickstand bridge",move:"bridgeMarch",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Single-leg bridge prep",move:"singleBridge",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Supported calf raise",move:"calfRaise",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Slow eccentric calf raise",move:"calfRaise",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Single-leg calf prep",move:"calfRaise",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Ankle rockers",move:"ankleRocks",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Heel taps",move:"heelTaps",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bent-knee brace",move:"heelTaps",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Dead bug",move:"deadbug",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Dead bug pause",move:"deadbug",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Long-lever dead bug",move:"longDeadbug",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Short side plank",move:"shortSide",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Side plank hold",move:"sidePlank",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Side plank reach",move:"sideReach",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Side plank rotation prep",move:"sideReach",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Three-point hold",move:"birdDog",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bird dog",move:"birdDog",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bird dog crunch",move:"birdDogCrunch",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bird dog hover",move:"birdDog",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Quadruped brace",move:"bearHold",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Recovery reset flow",move:"flowReset",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Bridge breathing",move:"bridge",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Mobility squat flow",move:"squatReach",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Calisthenics skill flow",move:"skillPrep",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"L-sit tuck prep",move:"skillPrep",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Crow-prep balance",move:"skillPrep",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Quiet conditioning circuit",move:"quietMarch",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Balance reset",move:"flowReset",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Posture builder",move:"birdDog",note:"Exact real-human media required. No recycled placeholder."},
+ {name:"Skill prep flow",move:"skillPrep",note:"Exact real-human media required. No recycled placeholder."}
 ];
-function workTime(base:number,age:string,level:Level,readiness:Readiness){const a:Record<string,number>={"13–17":.9,"18–29":1,"30–44":1,"45–59":.9,"60+":.78},l:Record<Level,number>={Beginner:.82,Intermediate:1,Advanced:1.18},r:Record<Readiness,number>={Recover:.72,Ready:1,Push:1.12};return Math.max(20,Math.round(base*a[age]*l[level]*r[readiness]/5)*5)}
+type VaultVideo={kind:"youtube"|"internal";src:string;credit:string;poster?:string};
+const vaultExactVideos:Record<string,VaultVideo>={
+ "Wall push-up":{kind:"youtube",src:"https://www.youtube.com/embed/wIPJvBQs7RA?start=10&rel=0&modestbranding=1",credit:"Hinge Health · wall push-up demo"},
+ "Counter push-up":{kind:"youtube",src:"https://www.youtube.com/embed/imLZeek9iCk?start=5&rel=0&modestbranding=1",credit:"Move with Mandee · countertop incline push-up"},
+ "Incline push-up":{kind:"youtube",src:"https://www.youtube.com/embed/49jfZ_z7-us?start=6&rel=0&modestbranding=1",credit:"Tom Morrison · incline push-up demo"},
+ "Slow negative push-up":{kind:"youtube",src:"https://www.youtube.com/embed/GX87fbBd78A?start=600&rel=0&modestbranding=1",credit:"E3 Rehab · eccentric push-up segment"},
+ "Pause push-up":{kind:"youtube",src:"https://www.youtube.com/embed/GX87fbBd78A?start=625&rel=0&modestbranding=1",credit:"E3 Rehab · isometric push-up segment"},
+ "High plank hold":{kind:"youtube",src:"https://www.youtube.com/embed/ZSwLBp3yt8M?start=5&rel=0&modestbranding=1",credit:"DrumFIT · high plank hold demo"},
+ "Forearm plank":{kind:"youtube",src:"https://www.youtube.com/embed/3QZlgJ40LfU?start=7&rel=0&modestbranding=1",credit:"Hospital for Special Surgery · forearm plank"},
+ "Plank shoulder tap prep":{kind:"youtube",src:"https://www.youtube.com/embed/kkLPhxkVoaM?start=70&rel=0&modestbranding=1",credit:"Knob Noster Physical Therapy · shoulder tap plank segment"},
+ "Bear crawl hold":{kind:"youtube",src:"https://www.youtube.com/embed/tIwLiz9T7nw?start=16&rel=0&modestbranding=1",credit:"Lift With Michelle · bear hold setup"},
+ "Sit-to-stand":{kind:"youtube",src:"https://www.youtube.com/embed/XTHqVokBkh0?start=4&rel=0&modestbranding=1",credit:"Strength & Sport · sit-to-stand"},
+ "Chair tap squat":{kind:"youtube",src:"https://www.youtube.com/embed/fNpFifF4PLU?start=22&rel=0&modestbranding=1",credit:"Scheurer Health · chair squat"},
+ "Knee plank":{kind:"youtube",src:"https://www.youtube.com/embed/iDSHokfXqyA?start=0&rel=0&modestbranding=1",credit:"PureGym · modified knee plank"},
+ "Squat pulse":{kind:"youtube",src:"https://www.youtube.com/embed/N4fzbBv4BFI?start=0&rel=0&modestbranding=1",credit:"Joanna Soh · squat pulse"},
+ "Quiet high-knee march":{kind:"youtube",src:"https://www.youtube.com/embed/e1iXec3h30o?start=0&rel=0&modestbranding=1",credit:"Chris Ryan Fitness · high-knee march modifier"},
+ "Slow eccentric calf raise":{kind:"youtube",src:"https://www.youtube.com/embed/r1YBXgc0bdE?start=0&rel=0&modestbranding=1",credit:"Hospital for Special Surgery · eccentric calf raise"},
+ "Single-leg calf prep":{kind:"youtube",src:"https://www.youtube.com/embed/h-hSEPw6AMk?start=0&rel=0&modestbranding=1",credit:"The Physiobot · single-leg bent-knee calf raise"},
+ "Short side plank":{kind:"youtube",src:"https://www.youtube.com/embed/QAg3vvgnbXE?start=0&rel=0&modestbranding=1",credit:"E3 Rehab Exercise Library · short side plank"},
+ "Quadruped brace":{kind:"youtube",src:"https://www.youtube.com/embed/eMi7w4W4Vnk?start=0&rel=0&modestbranding=1",credit:"Dr. Susie Spirlock · bear plank shoulder tap setup"},
+ "L-sit tuck prep":{kind:"youtube",src:"https://www.youtube.com/embed/wzaJ9lhetmk?start=10&rel=0&modestbranding=1",credit:"Stomerman · tuck L-sit progression"},
+ "Crow-prep balance":{kind:"youtube",src:"https://www.youtube.com/embed/ysTXf7DVOf0?start=25&rel=0&modestbranding=1",credit:"Simonster Strength · crow/frog stand tutorial"}, "Bodyweight squat":{kind:"internal",src:"/squat-loop.mp4",poster:"/squat-real.jpg",credit:"Bodywise sourced real-person squat loop"},
+ "Glute bridge hold":{kind:"internal",src:"/bridge-loop.mp4",poster:"/bridge-real.jpg",credit:"Bodywise sourced real-person bridge loop"},
+ "Marching bridge":{kind:"youtube",src:"https://www.youtube.com/embed/G107AsdCIYk?start=25&rel=0&modestbranding=1",credit:"Dr. Carl Baird · glute bridge march"},
+ "Single-leg bridge prep":{kind:"youtube",src:"https://www.youtube.com/embed/b1zTCyGJXCQ?start=20&rel=0&modestbranding=1",credit:"Dr. Carl Baird · single-leg glute bridge"},
+ "Supported calf raise":{kind:"internal",src:"https://wger.de/media/exercise-video/622/35b7b625-77fd-4c09-8c57-3ad0f2f23175.MOV",poster:"/calf-raise-real.jpg",credit:"WGER · supported standing calf raise"},
+ "Heel taps":{kind:"youtube",src:"https://www.youtube.com/embed/pFyZmJJJ1Mg?start=24&rel=0&modestbranding=1",credit:"Elite Performance Institute · dead bug heel taps"},
+ "Dead bug":{kind:"internal",src:"/dead-bug-real.mp4",poster:"/dead-bug-real.jpg",credit:"Cureus open-access supplement · CC BY"},
+ "Dead bug pause":{kind:"youtube",src:"https://www.youtube.com/embed/f5_lFmX8zpk?start=215&rel=0&modestbranding=1",credit:"Jenni Rawlings · dead bug pause/progression segment"},
+ "Long-lever dead bug":{kind:"youtube",src:"https://www.youtube.com/embed/f5_lFmX8zpk?start=275&rel=0&modestbranding=1",credit:"Jenni Rawlings · long-lever dead bug segment"},
+ "Side plank hold":{kind:"internal",src:"/side-plank-real.mp4",poster:"/side-plank-real.jpg",credit:"Frontiers open-access supplement · CC BY"},
+ "Side plank reach":{kind:"youtube",src:"https://www.youtube.com/embed/kkLPhxkVoaM?start=95&rel=0&modestbranding=1",credit:"Knob Noster Physical Therapy · side/core progression segment"},
+ "Side plank rotation prep":{kind:"youtube",src:"https://www.youtube.com/embed/kkLPhxkVoaM?start=95&rel=0&modestbranding=1",credit:"Knob Noster Physical Therapy · rotation-control segment"},
+ "Bird dog":{kind:"internal",src:"/bird-dog-real.mp4",poster:"/bird-dog-real.jpg",credit:"Frontiers open-access supplement · CC BY"},
+ "Bird dog crunch":{kind:"youtube",src:"https://www.youtube.com/embed/sjUe5KpzyU4?start=105&rel=0&modestbranding=1",credit:"FITBODY with Julie Lohre · bird dog crunch segment"},
+ "Bird dog hover":{kind:"youtube",src:"https://www.youtube.com/embed/sjUe5KpzyU4?start=70&rel=0&modestbranding=1",credit:"FITBODY with Julie Lohre · bird dog hold segment"}
+};
+function VaultMedia({item,move}:{item:(typeof vault)[number];move:Move}){const v=vaultExactVideos[item.name];if(v?.kind==="youtube")return <div className="vault-embed"><iframe src={v.src} title={item.name+" exact real-human demo"} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen loading="lazy"/></div>;if(v?.kind==="internal")return <div className="movement-media large"><video src={v.src} poster={v.poster||move.image} autoPlay loop muted playsInline preload="auto" aria-label={item.name+" exact real-person movement demonstration"}/><div className="media-shade"/><span className="media-credit">{v.credit}</span><span className="loop-badge">↻ LOOP</span></div>;return <div className="vault-pending"><b>Exact clip in progress</b><p>No recycled placeholder is shown here. This slot is reserved for a real-human exact demo for {item.name}.</p></div>}function workTime(base:number,age:string,level:Level,readiness:Readiness){const a:Record<string,number>={"13–17":.9,"18–29":1,"30–44":1,"45–59":.9,"60+":.78},l:Record<Level,number>={Beginner:.82,Intermediate:1,Advanced:1.18},r:Record<Readiness,number>={Recover:.72,Ready:1,Push:1.12};return Math.max(20,Math.round(base*a[age]*l[level]*r[readiness]/5)*5)}
 function MovementMedia({move,large=false}:{move:Move;large?:boolean}){return <div className={"movement-media "+(large?"large":"")}><video src={move.video} poster={move.image} autoPlay loop muted playsInline preload={large?"auto":"metadata"} aria-label={move.name+" real-person movement demonstration"}/><div className="media-shade"/>{move.credit&&<span className="media-credit">{move.credit}</span>}<span className="loop-badge">↻ LOOP</span></div>}
 export default function Home(){
  const[goal,setGoal]=useState<Goal>("Full body"),[age,setAge]=useState("30–44"),[sex,setSex]=useState<Sex>("Prefer not to say"),[level,setLevel]=useState<Level>("Beginner"),[readiness,setReadiness]=useState<Readiness>("Ready");
@@ -123,7 +160,7 @@ export default function Home(){
   {tab==="Plan"&&<PlanPage goal={goal} minutes={minutes}/>} {tab==="Community"&&<CommunityPage kudos={kudos} onKudos={()=>setKudos(v=>v+1)}/>} {tab==="Progress"&&<ProgressPage goal={goal}/>} 
   <nav className="bottom-nav provider-nav">{nav.map((x,i)=><button className={tab===x?"selected":""} onClick={()=>setTab(x)} key={x}><span>{["●","▤","◎","◔"][i]}</span>{x}</button>)}</nav>
   {adapt&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setAdapt(false)} aria-label="Close"/><section className="sheet adapt-sheet"><i/><button className="close" onClick={()=>setAdapt(false)}>×</button><p className="eyebrow">FREE UP THE PLAN</p><h2>Adapt today.</h2><fieldset><legend>Time available</legend><div className="choices">{[10,15,20].map(x=><button className={targetMinutes===x?"chosen":""} onClick={()=>setTargetMinutes(x)} key={x}>{x} min</button>)}</div></fieldset><fieldset><legend>Energy</legend><div className="choices">{(["Recover","Ready","Push"] as Readiness[]).map(x=><button className={readiness===x?"chosen":""} onClick={()=>setReadiness(x)} key={x}>{x}</button>)}</div></fieldset><label className="quiet-toggle"><span><b>Quiet mode</b><small>No jumping · small-space friendly</small></span><input type="checkbox" checked={quiet} onChange={e=>setQuiet(e.target.checked)}/></label><button className="save" onClick={()=>setAdapt(false)}>Update today’s workout</button></section></div>}
-  {vaultMove&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setVaultMove(null)} aria-label="Close"/><section className="sheet vault-sheet"><i/><button className="close" onClick={()=>setVaultMove(null)}>×</button><p className="eyebrow">MOVE VAULT GUIDE</p><h2>{vaultMove.name}</h2><div className="vault-visual"><MovementMedia move={M[vaultMove.move]} large/></div><div className="vault-guide-copy"><small>{M[vaultMove.move].family} · {M[vaultMove.move].intensity}</small><h3>{M[vaultMove.move].cue}</h3><p>{M[vaultMove.move].detail}</p><b>Why it matters</b><p>{M[vaultMove.move].why}</p><b>Progressions</b><div>{M[vaultMove.move].variants.map(x=><span key={x}>{x}</span>)}</div><em>{vaultMove.note}</em></div><button className="save" onClick={()=>{setVaultMove(null);setGoal("Skill Prep");setTab("Today")}}>Train related moves</button></section></div>}
+  {vaultMove&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setVaultMove(null)} aria-label="Close"/><section className="sheet vault-sheet"><i/><button className="close" onClick={()=>setVaultMove(null)}>×</button><p className="eyebrow">MOVE VAULT GUIDE</p><h2>{vaultMove.name}</h2><div className="vault-visual"><VaultMedia item={vaultMove} move={M[vaultMove.move]}/></div><div className="vault-guide-copy"><small>{M[vaultMove.move].family} · {M[vaultMove.move].intensity}</small><h3>{M[vaultMove.move].cue}</h3><p>{M[vaultMove.move].detail}</p><b>Why it matters</b><p>{M[vaultMove.move].why}</p><b>Progressions</b><div>{M[vaultMove.move].variants.map(x=><span key={x}>{x}</span>)}</div><em>{vaultExactVideos[vaultMove.name]?"Exact real-human demo sourced; trimmed or started at the movement where possible.":"Exact video is still being sourced or created; no repeated convenience placeholder is shown."}</em></div><button className="save" onClick={()=>{setVaultMove(null);setGoal("Skill Prep");setTab("Today")}}>Train related moves</button></section></div>}
   {profile&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setProfile(false)} aria-label="Close"/><section className="sheet"><i/><button className="close" onClick={()=>setProfile(false)}>×</button><p className="eyebrow">PERSONALISE YOUR START</p><h2>Make the plan yours.</h2><p className="note">Age and experience tune the starting pace. Sex is optional health context and does not change your workout.</p><fieldset><legend>Training target</legend><div className="choices target-choices">{(Object.keys(goals) as Goal[]).map(x=><button className={goal===x?"chosen":""} onClick={()=>chooseGoal(x)} key={x}>{x}</button>)}</div></fieldset><fieldset><legend>Age range</legend><div className="choices ages">{ages.map(x=><button className={age===x?"chosen":""} onClick={()=>setAge(x)} key={x}>{x}</button>)}</div></fieldset><fieldset><legend>Sex · optional health context</legend><div className="choices">{(["Female","Male","Prefer not to say"] as Sex[]).map(x=><button className={sex===x?"chosen":""} onClick={()=>setSex(x)} key={x}>{x}</button>)}</div></fieldset><fieldset><legend>Experience</legend><div className="choices">{(["Beginner","Intermediate","Advanced"] as Level[]).map(x=><button className={level===x?"chosen":""} onClick={()=>setLevel(x)} key={x}>{x}</button>)}</div></fieldset><div className="preview"><span>{goal} practice</span><b>{minutes} min · {plan.length} targeted movements · {vault.length} vault variations</b></div><button className="save" onClick={saveProfile}>Save my plan</button></section></div>}
   {session&&<section className="session premium-session" role="dialog" aria-modal="true"><header><button onClick={()=>{setSession(false);setRunning(false)}}>×</button><span>{goal.toUpperCase()} · MOVE {active+1} OF {plan.length}</span><button>◒</button></header><div className="live-metrics"><span><small>HEART RATE · DEMO</small><b>124 <i>BPM</i></b></span><span><small>EFFORT · DEMO</small><b>6 <i>/10</i></b></span><span><small>ACTIVE · DEMO</small><b>38 <i>KCAL</i></b></span></div><div className="session-title"><p>{current.family}</p><h2>{current.name}</h2></div><div className="session-visual"><MovementMedia move={current} large/></div><div className="session-tools"><button className={audioHints?"on":""} onClick={()=>setAudioHints(v=>!v)}>◖ Audio hints</button><button className={caption?"on":""} onClick={()=>setCaption(v=>!v)}>CC Captions</button><button onClick={()=>setRotation(v=>(v+1)%3)}>◐ Swap</button><button>♫ Focus mix</button></div>{caption&&<p className="caption">{current.detail}</p>}<div className="cue"><span>COACH KAI</span><b>{current.cue}</b><p>{audioHints?"Audio hint on · ":""}{current.detail}</p></div><div className="timer-row"><div className="timer" style={{background:"conic-gradient(#e8ff48 "+((current.seconds-left)/current.seconds*100)+"%,#2e302a 0)"}}><div><b>{left}</b><span>SECONDS</span></div></div><button onClick={()=>setRunning(v=>!v)}>{running?"Ⅱ":"▶"}<span>{running?"Pause":"Resume"}</span></button><button className="next" onClick={next}>→<span>{active===plan.length-1?"Finish":"Next"}</span></button></div><div className="session-progress"><i style={{width:((active+1)/plan.length*100)+"%"}}/></div></section>}
   {finish&&<div className="overlay finish" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setFinish(false)} aria-label="Close"/><section className="finish-card"><span>✓</span><p className="eyebrow">SESSION COMPLETE</p><h2>Strong work.</h2><p>You kept the promise you made to yourself today. Next time, spin a new rotation to keep it fresh.</p><div className="summary-metrics"><b>{minutes}<small>MIN</small></b><b>{plan.length}<small>MOVES</small></b><b>+1<small>STREAK</small></b></div><div className="rating"><small>HOW DID THAT FEEL?</small><div>{["Too easy","Just right","Too hard"].map(x=><button key={x}>{x}</button>)}</div></div><button className="share-result" onClick={()=>setRotation(v=>(v+1)%3)}>Unlock next variation</button><button className="done" onClick={()=>setFinish(false)}>Done</button></section></div>}
@@ -131,3 +168,6 @@ export default function Home(){
 function PlanPage({goal,minutes}:{goal:Goal;minutes:number}){const days=[{d:"MON",n:"14",s:"DONE",t:"Foundation"},{d:"TUE",n:"15",s:"REST",t:"Mobility"},{d:"WED",n:"16",s:"TODAY",t:goal},{d:"FRI",n:"18",s:"UP NEXT",t:"Fresh rotation"},{d:"SUN",n:"20",s:"OPTIONAL",t:"Skill prep"}];return <section className="platform-page plan-page"><p className="eyebrow">YOUR CUSTOM PLAN</p><h1>Stay<br/><em>curious.</em></h1><p className="page-lede">A flexible week that rotates movement families so users get novelty without losing structure.</p><div className="plan-summary"><span><b>3</b> days / week</span><span><b>{minutes}</b> min / session</span><span><b>{Object.keys(goals).length}</b> goal packs</span></div><div className="week-plan">{days.map(x=><article className={x.s==="TODAY"?"today":""} key={x.d}><div><small>{x.d}</small><b>{x.n}</b></div><span>{x.s}</span><h3>{x.t}</h3><p>{x.s==="REST"?"Breathe · stretch · walk":minutes+" min · Coach Kai"}</p>{x.s==="TODAY"&&<button>Start →</button>}</article>)}</div><div className="plan-controls"><h2>Plan upgrades</h2><button><span>Rotation logic</span><b>3 versions per goal →</b></button><button><span>Boredom guard</span><b>Shuffle + vault →</b></button><button><span>Media promise</span><b>Real-person only →</b></button></div><div className="coach-program"><span>COACH KAI · BLOCK 1</span><h2>Own the basics, then vary them.</h2><p>The app now teaches families, progressions and swaps — the part that keeps people from quitting after week one.</p><i>WEEK 2 OF 4</i></div></section>}
 function CommunityPage({kudos,onKudos}:{kudos:number;onKudos:()=>void}){return <section className="platform-page community-page"><p className="eyebrow">BODYWISE CLUB</p><h1>Better<br/><em>together.</em></h1><p className="page-lede">A supportive, opt-in space for showing up — with weekly variety challenges.</p><article className="challenge"><span>THIS WEEK’S CHALLENGE</span><h2>Try 3 different rotations.</h2><div><i style={{width:"58%"}}/></div><p><b>7</b> of 12 sessions · 13 days left</p><button>View challenge →</button></article><div className="club-strip"><span><b>2,418</b> members</span><span><b>386</b> trained today</span><span><b>94%</b> supportive</span></div><div className="feed"><h2>Club feed</h2><article><div className="member">AR</div><div><b>Amara R.</b><small>2 HOURS AGO · CORE CONTROL</small><p>The side plank rotation finally made core day feel different.</p><button onClick={onKudos}>▲ {kudos} kudos</button><button>Reply</button></div></article><article><div className="member rust">JL</div><div><b>Jon L.</b><small>YESTERDAY · QUIET SWEAT</small><p>Quiet conditioning in a hotel room. Zero jumping, still sweaty.</p><button>▲ 24 kudos</button><button>Reply</button></div></article></div><p className="privacy-note">Community sharing is opt-in. Your age, sex and health context stay private.</p></section>}
 function ProgressPage({goal}:{goal:Goal}){return <section className="platform-page progress-page"><p className="eyebrow">YOUR PROGRESS</p><h1>Proof of<br/><em>practice.</em></h1><p className="page-lede">Track consistency, capacity, movement variety and the skills you are earning.</p><div className="score-grid"><article><span>THIS WEEK</span><b>3<small>/3</small></b><p>sessions complete</p></article><article><span>VARIETY SCORE</span><b>84<small>%</small></b><p>new movement exposure</p></article><article><span>TRAINING TIME</span><b>62<small> MIN</small></b><p>+14% vs last week</p></article><article><span>FOCUS</span><b className="focus-score">{goal}</b><p>current block</p></article></div><article className="load-chart"><div><span>TRAINING LOAD</span><b>Balanced</b></div><div className="bars">{[42,61,36,78,58,90,70].map((x,i)=><i key={i} style={{height:x+"%"}}/>)}</div>{["MON","TUE","WED","THU","FRI","SAT","SUN"].map(x=><small key={x}>{x}</small>)}</article><article className="skill-path"><span>SKILL PATH · PUSH-UP</span><h2>Build it one step at a time.</h2>{["Wall push-up","Incline push-up","Slow negative","Full push-up"].map((x,i)=><div className={i<2?"done":i===2?"current":""} key={x}><i>{i<2?"✓":i+1}</i><span><b>{x}</b><small>{i<2?"Mastered":i===2?"In progress · 68%":"Locked"}</small></span></div>)}</article><article className="latest-win"><span>YOUR LATEST WIN</span><h2>Unlocked rotation variety</h2><p>More choices, same bodyweight foundation, real-person media only.</p><button>Share achievement →</button></article></section>}
+
+
+
