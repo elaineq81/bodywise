@@ -4,6 +4,7 @@ type MuscleWikiVideo = {
   url?: string;
   video?: string;
   filename?: string;
+  path?: string;
   gender?: string;
   angle?: string;
   type?: string;
@@ -51,8 +52,15 @@ export async function GET(request: NextRequest) {
   );
 
   if (!upstream.ok) {
+    let detail = "MuscleWiki search failed.";
+    let upgradeUrl: string | undefined;
+    try {
+      const errorPayload = await upstream.json();
+      detail = errorPayload?.message || errorPayload?.detail || detail;
+      upgradeUrl = errorPayload?.upgrade_url;
+    } catch {}
     return NextResponse.json(
-      {error: "MuscleWiki search failed.", status: upstream.status},
+      {error: detail, status: upstream.status, upgradeUrl},
       {status: upstream.status},
     );
   }
@@ -73,8 +81,15 @@ export async function GET(request: NextRequest) {
       category: exercise.category,
       muscles: exercise.primary_muscles || [],
       videoCount: exercise.videos?.length || 0,
-      // Do not proxy/download media here. MuscleWiki videos must stream inside
-      // the app through their authenticated API media routes per their terms.
+      videos: (exercise.videos || []).slice(0, 4).map((video, index) => ({
+        index,
+        gender: video.gender,
+        angle: video.angle,
+        type: video.type,
+        filename: video.filename,
+        path: video.path,
+        hasStream: Boolean(video.filename || video.path || video.url || video.video),
+      })),
     })),
   });
 }
