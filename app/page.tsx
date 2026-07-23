@@ -189,6 +189,13 @@ const vaultExactVideos:Record<string,VaultVideo>={
  "Calisthenics skill flow":{kind:"direct",src:"/bodywise-calisthenics-skill-flow-demo.mp4",poster:"/plank-real.jpg",credit:"Bodywise Original Demo · calisthenics skill flow",quality:"bodywise-owned"},
  "L-sit tuck prep":{kind:"direct",src:"/bodywise-l-sit-tuck-prep-demo.mp4",poster:"/plank-real.jpg",credit:"Bodywise Original Demo · L-sit tuck prep",quality:"bodywise-owned"},
  "Crow-prep balance":{kind:"direct",src:"/bodywise-crow-prep-balance-demo.mp4",poster:"/plank-real.jpg",credit:"Bodywise Original Demo · crow-prep balance",quality:"bodywise-owned"},
+ "Counter push-up":{kind:"direct",src:"/bodywise-counter-pushup-demo.mp4",poster:"/pushup-real.jpg",credit:"Bodywise Original Demo · counter push-up",quality:"bodywise-owned"},
+ "Glute bridge hold":{kind:"direct",src:"/bodywise-glute-bridge-hold-demo.mp4",poster:"/bridge-real.jpg",credit:"Bodywise Original Demo · glute bridge hold",quality:"bodywise-owned"},
+ "Kickstand bridge":{kind:"direct",src:"/bodywise-kickstand-bridge-demo.mp4",poster:"/bridge-real.jpg",credit:"Bodywise Original Demo · kickstand bridge",quality:"bodywise-owned"},
+ "Dead bug pause":{kind:"direct",src:"/bodywise-dead-bug-pause-demo-v2.mp4",poster:"/dead-bug-real.jpg",credit:"Bodywise Original Demo · dead bug pause v2",quality:"bodywise-owned"},
+ "Side plank rotation prep":{kind:"direct",src:"/bodywise-side-plank-rotation-prep-demo.mp4",poster:"/side-plank-real.jpg",credit:"Bodywise Original Demo · side plank rotation prep",quality:"bodywise-owned"},
+ "Quadruped brace":{kind:"direct",src:"/bodywise-quadruped-brace-demo.mp4",poster:"/bird-dog-real.jpg",credit:"Bodywise Original Demo · quadruped brace",quality:"bodywise-owned"},
+ "Skill prep flow":{kind:"direct",src:"/bodywise-skill-prep-flow-demo.mp4",poster:"/plank-real.jpg",credit:"Bodywise Original Demo · skill prep flow",quality:"bodywise-owned"},
  "Plank shoulder tap prep":{kind:"direct",src:"/bodywise-plank-shoulder-taps-demo.mp4",poster:"/plank-real.jpg",credit:"Bodywise Original Demo",quality:"bodywise-owned"},
  "Bear crawl hold":{kind:"direct",src:"/bodywise-bear-hold-demo.mp4",poster:"/bird-dog-real.jpg",credit:"Bodywise Original Demo",quality:"bodywise-owned"},
  "Sit-to-stand":{kind:"direct",src:"/bodywise-sit-to-stand-demo.mp4",poster:"/squat-real.jpg",credit:"Bodywise Original Demo",quality:"bodywise-owned"},
@@ -210,8 +217,8 @@ const premiumSourcePlan=[
 ];
 const candidateSourcePass=[
  {move:"Wall push-up",source:"Bodywise Original Demo",status:"Resolved in app: local Bodywise-owned loop is wired into Today, Move Vault and clip collection."},
- {move:"Counter push-up",source:"Exact-only review queue",status:"Wall push-up reuse removed. Show no video until a true counter or bench-height push-up clip is secured."},
- {move:"Dead bug pause",source:"QA rejected",status:"Removed from approved clips after anatomy error report. It will show Secure exact clip until a two-arm/two-leg human demo passes review."},
+ {move:"Counter push-up",source:"Bodywise Original Demo",status:"Resolved with a unique exact counter push-up replacement clip."},
+ {move:"Dead bug pause",source:"Bodywise Original Demo v2",status:"Earlier defective clip rejected; v2 replacement is now wired as its own unique file."},
  {move:"Sit-to-stand",source:"Bodywise Original Demo",status:"Resolved in app: local seated-to-standing loop is wired into knee-strength and Move Vault flows."},
  {move:"No-reuse rule",source:"Bodywise audit",status:"Each named move must have its own distinct approved clip. Similar progressions no longer inherit family videos."},
  {move:"Open-access clips",source:"Local app assets",status:"Only used where the visible movement matches the exact named move; no YouTube previews are used."},
@@ -259,6 +266,14 @@ const approvedMuscleWikiMappings=[
  {move:"Posture builder",source:"Bodywise Original Demo",status:"Approved in app"},
  {move:"Quiet conditioning circuit",source:"Bodywise Original Demo",status:"Approved in app"},
  {move:"Calisthenics skill flow",source:"Bodywise Original Demo",status:"Approved in app"},
+
+ {move:"Counter push-up",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Glute bridge hold",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Kickstand bridge",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Dead bug pause",source:"Bodywise Original Demo v2",status:"Approved in app"},
+ {move:"Side plank rotation prep",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Quadruped brace",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Skill prep flow",source:"Bodywise Original Demo",status:"Approved in app"},
  {move:"L-sit tuck prep",source:"Bodywise Original Demo",status:"Approved in app"},
  {move:"Crow-prep balance",source:"Bodywise Original Demo",status:"Approved in app"},
  {move:"Dead bug",source:"Local/open-access clip",status:"Approved in app"},
@@ -311,6 +326,13 @@ const shortLoopCollection:ShortLoopClip[]=[
  {move:"Posture builder",source:"Bodywise Original Demo",url:"/bodywise-posture-builder-demo.mp4",preview:"/bodywise-posture-builder-demo.mp4",poster:"/bird-dog-real.jpg",loop:"4 sec loop · posture builder flow",status:"Owned app demo: no third-party licensing dependency.",ready:true,media:"video"},
  {move:"Quiet conditioning circuit",source:"Bodywise Original Demo",url:"/bodywise-quiet-conditioning-circuit-demo.mp4",preview:"/bodywise-quiet-conditioning-circuit-demo.mp4",poster:"/squat-real.jpg",loop:"4 sec loop · quiet conditioning circuit",status:"Owned app demo: no third-party licensing dependency.",ready:true,media:"video"},
  {move:"Calisthenics skill flow",source:"Bodywise Original Demo",url:"/bodywise-calisthenics-skill-flow-demo.mp4",preview:"/bodywise-calisthenics-skill-flow-demo.mp4",poster:"/plank-real.jpg",loop:"4 sec loop · calisthenics skill flow",status:"Owned app demo: no third-party licensing dependency.",ready:true,media:"video"},
+ {move:"Counter push-up",source:"Bodywise Original Demo",url:"/bodywise-counter-pushup-demo.mp4",preview:"/bodywise-counter-pushup-demo.mp4",poster:"/pushup-real.jpg",loop:"4 sec loop · hands on counter push-up",status:"Generated exact Bodywise replacement; no reused wall push-up clip.",ready:true,media:"video"},
+ {move:"Glute bridge hold",source:"Bodywise Original Demo",url:"/bodywise-glute-bridge-hold-demo.mp4",preview:"/bodywise-glute-bridge-hold-demo.mp4",poster:"/bridge-real.jpg",loop:"4 sec hold loop · hips lifted and steady",status:"Generated exact Bodywise replacement; no reused bridge-lower loop.",ready:true,media:"video"},
+ {move:"Kickstand bridge",source:"Bodywise Original Demo",url:"/bodywise-kickstand-bridge-demo.mp4",preview:"/bodywise-kickstand-bridge-demo.mp4",poster:"/bridge-real.jpg",loop:"4 sec loop · one foot planted, one kickstand foot",status:"Generated exact Bodywise replacement; no reused marching bridge clip.",ready:true,media:"video"},
+ {move:"Dead bug pause",source:"Bodywise Original Demo",url:"/bodywise-dead-bug-pause-demo-v2.mp4",preview:"/bodywise-dead-bug-pause-demo-v2.mp4",poster:"/dead-bug-real.jpg",loop:"4 sec loop · opposite arm/leg reach with pause",status:"V2 replacement generated after rejecting earlier anatomy-defective clip.",ready:true,media:"video"},
+ {move:"Side plank rotation prep",source:"Bodywise Original Demo",url:"/bodywise-side-plank-rotation-prep-demo.mp4",preview:"/bodywise-side-plank-rotation-prep-demo.mp4",poster:"/side-plank-real.jpg",loop:"4 sec loop · side plank with controlled shoulder rotation",status:"Generated exact Bodywise replacement; no reused side plank reach clip.",ready:true,media:"video"},
+ {move:"Quadruped brace",source:"Bodywise Original Demo",url:"/bodywise-quadruped-brace-demo.mp4",preview:"/bodywise-quadruped-brace-demo.mp4",poster:"/bird-dog-real.jpg",loop:"4 sec hold loop · hands and knees brace",status:"Generated exact Bodywise replacement; no reused bear hold clip.",ready:true,media:"video"},
+ {move:"Skill prep flow",source:"Bodywise Original Demo",url:"/bodywise-skill-prep-flow-demo.mp4",preview:"/bodywise-skill-prep-flow-demo.mp4",poster:"/plank-real.jpg",loop:"4 sec loop · plank, push-up setup and tuck support prep",status:"Generated exact Bodywise replacement; no reused calisthenics skill flow clip.",ready:true,media:"video"},
  {move:"L-sit tuck prep",source:"Bodywise Original Demo",url:"/bodywise-l-sit-tuck-prep-demo.mp4",preview:"/bodywise-l-sit-tuck-prep-demo.mp4",poster:"/plank-real.jpg",loop:"4 sec loop · L-sit tuck prep",status:"Owned app demo: no third-party licensing dependency.",ready:true,media:"video"},
  {move:"Crow-prep balance",source:"Bodywise Original Demo",url:"/bodywise-crow-prep-balance-demo.mp4",preview:"/bodywise-crow-prep-balance-demo.mp4",poster:"/plank-real.jpg",loop:"4 sec loop · crow-prep balance",status:"Owned app demo: no third-party licensing dependency.",ready:true,media:"video"},
  {move:"Wall push-up",source:"Bodywise Original Demo",url:"/bodywise-wall-pushup-demo.mp4",preview:"/bodywise-wall-pushup-demo.mp4",poster:"/pushup-real.jpg",loop:"4 sec loop · wall press and return",status:"Owned app demo: no third-party licensing dependency.",ready:true,media:"video"},
@@ -328,7 +350,7 @@ const movePreviewAliases:Record<string,string>={
  "Plank shoulder tap prep":"Plank shoulder taps",
  "Bear crawl hold":"Bear crawl hold"
 };
-const exactMoveMediaNames=new Set(["Ankle rockers","Balance reset","Bear crawl hold","Bent-knee brace","Bird dog","Bird dog crunch","Bird dog hover","Bodyweight squat","Bridge breathing","Calisthenics skill flow","Chair tap squat","Crow-prep balance","Dead bug","Forearm plank","Glute bridge","Heel taps","High plank hold","Incline push-up","Knee plank","L-sit tuck prep","Long-lever dead bug","Long-lever plank","Marching bridge","Mobility squat flow","Pause push-up","Plank shoulder tap prep","Posture builder","Quiet conditioning circuit","Quiet high-knee march","Recovery reset flow","Short side plank","Side plank","Side plank hold","Side plank reach","Single-leg bridge prep","Single-leg calf prep","Sit-to-stand","Slow eccentric calf raise","Slow negative push-up","Squat pulse","Squat-to-reach","Standing calf raise","Supported calf raise","Tempo squat","Three-point hold","Tucked hollow hold","Wall push-up"]);
+const exactMoveMediaNames=new Set(["Ankle rockers","Balance reset","Bear crawl hold","Bent-knee brace","Bird dog crunch","Bird dog hover","Bird dog","Bodyweight squat","Bridge breathing","Calisthenics skill flow","Chair tap squat","Counter push-up","Crow-prep balance","Dead bug pause","Dead bug","Forearm plank","Glute bridge hold","Glute bridge","Heel taps","High plank hold","Incline push-up","Kickstand bridge","Knee plank","L-sit tuck prep","Long-lever dead bug","Long-lever plank","Marching bridge","Mobility squat flow","Pause push-up","Plank shoulder tap prep","Posture builder","Quadruped brace","Quiet conditioning circuit","Quiet high-knee march","Recovery reset flow","Short side plank","Side plank hold","Side plank reach","Side plank rotation prep","Side plank","Single-leg bridge prep","Single-leg calf prep","Sit-to-stand","Skill prep flow","Slow eccentric calf raise","Slow negative push-up","Squat pulse","Squat-to-reach","Standing calf raise","Supported calf raise","Tempo squat","Three-point hold","Tucked hollow hold","Wall push-up"]);
 function sourcingPlan(name:string){const n=name.toLowerCase();
  if(n.includes("push"))return{lead:"Push variation lead",query:`exact real human ${name} exercise demo commercial license mp4 no animation no YouTube`,provider:"YMove API, Pexels licensed stock, IFPE/FAME only after written rights confirmation",url:"https://ymove.app/exercise-api",route:"License a matching clip, then trim to the first clean rep and save as a Bodywise loop."};
  if(n.includes("squat")||n.includes("stand")||n.includes("knee"))return{lead:"Knee + squat lead",query:`exact real human ${name} exercise demo sit stand squat commercial license mp4`,provider:"YMove, Central Athlete EVL, FAME/clinic clips after written app-use permission",url:"https://www.centralathlete.com/exercise-video-library",route:"Prioritize frontal/side view, knee tracking visible, no chair reuse unless the move is actually chair-based."};
