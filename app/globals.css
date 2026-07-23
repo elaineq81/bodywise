@@ -52,3 +52,6 @@
 
 /* Smarter hero proof counters */
 .smart-proof span{align-items:flex-start}.smart-proof small{display:block;margin-top:4px;color:#77786e;font-size:7px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;line-height:1.15}
+
+/* Expanded library counters */
+.library-proof{grid-template-columns:1.15fr 1fr 1fr!important}.library-proof span{min-height:66px}.library-proof b{font-size:28px!important}@media(max-width:380px){.library-proof{grid-template-columns:1fr!important}.library-proof span{min-height:54px}}
