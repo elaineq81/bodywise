@@ -49,3 +49,6 @@
 
 /* Two-plan subscription pricing */
 .pricing-grid.two-plan{grid-template-columns:repeat(2,1fr)!important}.pricing-grid.two-plan button{min-height:104px}.pricing-grid.two-plan b{font-size:29px}.price-row span{line-height:1.32}@media(max-width:380px){.pricing-grid.two-plan{grid-template-columns:1fr!important}}
+
+/* Smarter hero proof counters */
+.smart-proof span{align-items:flex-start}.smart-proof small{display:block;margin-top:4px;color:#77786e;font-size:7px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;line-height:1.15}
