@@ -47,57 +47,57 @@ const goals={
 };
 type Goal=keyof typeof goals; const ages=["13–17","18–29","30–44","45–59","60+"]; const nav:Tab[]=["Today","Plan","Community","Progress"];
 const vault=[
- {name:"Wall push-up",move:"wallPush",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Counter push-up",move:"wallPush",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Incline push-up",move:"push",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Slow negative push-up",move:"slowPush",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Pause push-up",move:"slowPush",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"High plank hold",move:"plank",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Knee plank",move:"kneePlank",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Forearm plank",move:"plank",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Long-lever plank",move:"longPlank",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Plank shoulder tap prep",move:"plankTap",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bear crawl hold",move:"bearHold",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Sit-to-stand",move:"sitStand",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Chair tap squat",move:"sitStand",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bodyweight squat",move:"squat",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Tempo squat",move:"squat",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Squat pulse",move:"squatPulse",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Squat-to-reach",move:"squatReach",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Quiet high-knee march",move:"quietMarch",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Glute bridge hold",move:"bridge",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Marching bridge",move:"bridgeMarch",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Kickstand bridge",move:"bridgeMarch",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Single-leg bridge prep",move:"singleBridge",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Supported calf raise",move:"calfRaise",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Slow eccentric calf raise",move:"calfRaise",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Single-leg calf prep",move:"calfRaise",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Ankle rockers",move:"ankleRocks",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Heel taps",move:"heelTaps",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bent-knee brace",move:"heelTaps",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Dead bug",move:"deadbug",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Dead bug pause",move:"deadbug",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Long-lever dead bug",move:"longDeadbug",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Tucked hollow hold",move:"longDeadbug",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Short side plank",move:"shortSide",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Side plank hold",move:"sidePlank",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Side plank reach",move:"sideReach",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Side plank rotation prep",move:"sideReach",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Three-point hold",move:"birdDog",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bird dog",move:"birdDog",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bird dog crunch",move:"birdDogCrunch",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bird dog hover",move:"birdDog",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Quadruped brace",move:"bearHold",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Recovery reset flow",move:"flowReset",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Bridge breathing",move:"bridge",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Mobility squat flow",move:"squatReach",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Calisthenics skill flow",move:"skillPrep",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"L-sit tuck prep",move:"skillPrep",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Crow-prep balance",move:"skillPrep",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Quiet conditioning circuit",move:"quietMarch",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Balance reset",move:"flowReset",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Posture builder",move:"birdDog",note:"Bodywise demo required. No borrowed placeholder."},
- {name:"Skill prep flow",move:"skillPrep",note:"Bodywise demo required. No borrowed placeholder."}
+ {name:"Wall push-up",move:"wallPush",note:"Media status synced across app."},
+ {name:"Counter push-up",move:"wallPush",note:"Media status synced across app."},
+ {name:"Incline push-up",move:"push",note:"Media status synced across app."},
+ {name:"Slow negative push-up",move:"slowPush",note:"Media status synced across app."},
+ {name:"Pause push-up",move:"slowPush",note:"Media status synced across app."},
+ {name:"High plank hold",move:"plank",note:"Media status synced across app."},
+ {name:"Knee plank",move:"kneePlank",note:"Media status synced across app."},
+ {name:"Forearm plank",move:"plank",note:"Media status synced across app."},
+ {name:"Long-lever plank",move:"longPlank",note:"Media status synced across app."},
+ {name:"Plank shoulder tap prep",move:"plankTap",note:"Media status synced across app."},
+ {name:"Bear crawl hold",move:"bearHold",note:"Media status synced across app."},
+ {name:"Sit-to-stand",move:"sitStand",note:"Media status synced across app."},
+ {name:"Chair tap squat",move:"sitStand",note:"Media status synced across app."},
+ {name:"Bodyweight squat",move:"squat",note:"Media status synced across app."},
+ {name:"Tempo squat",move:"squat",note:"Media status synced across app."},
+ {name:"Squat pulse",move:"squatPulse",note:"Media status synced across app."},
+ {name:"Squat-to-reach",move:"squatReach",note:"Media status synced across app."},
+ {name:"Quiet high-knee march",move:"quietMarch",note:"Media status synced across app."},
+ {name:"Glute bridge hold",move:"bridge",note:"Media status synced across app."},
+ {name:"Marching bridge",move:"bridgeMarch",note:"Media status synced across app."},
+ {name:"Kickstand bridge",move:"bridgeMarch",note:"Media status synced across app."},
+ {name:"Single-leg bridge prep",move:"singleBridge",note:"Media status synced across app."},
+ {name:"Supported calf raise",move:"calfRaise",note:"Media status synced across app."},
+ {name:"Slow eccentric calf raise",move:"calfRaise",note:"Media status synced across app."},
+ {name:"Single-leg calf prep",move:"calfRaise",note:"Media status synced across app."},
+ {name:"Ankle rockers",move:"ankleRocks",note:"Media status synced across app."},
+ {name:"Heel taps",move:"heelTaps",note:"Media status synced across app."},
+ {name:"Bent-knee brace",move:"heelTaps",note:"Media status synced across app."},
+ {name:"Dead bug",move:"deadbug",note:"Media status synced across app."},
+ {name:"Dead bug pause",move:"deadbug",note:"Media status synced across app."},
+ {name:"Long-lever dead bug",move:"longDeadbug",note:"Media status synced across app."},
+ {name:"Tucked hollow hold",move:"longDeadbug",note:"Media status synced across app."},
+ {name:"Short side plank",move:"shortSide",note:"Media status synced across app."},
+ {name:"Side plank hold",move:"sidePlank",note:"Media status synced across app."},
+ {name:"Side plank reach",move:"sideReach",note:"Media status synced across app."},
+ {name:"Side plank rotation prep",move:"sideReach",note:"Media status synced across app."},
+ {name:"Three-point hold",move:"birdDog",note:"Media status synced across app."},
+ {name:"Bird dog",move:"birdDog",note:"Media status synced across app."},
+ {name:"Bird dog crunch",move:"birdDogCrunch",note:"Media status synced across app."},
+ {name:"Bird dog hover",move:"birdDog",note:"Media status synced across app."},
+ {name:"Quadruped brace",move:"bearHold",note:"Media status synced across app."},
+ {name:"Recovery reset flow",move:"flowReset",note:"Media status synced across app."},
+ {name:"Bridge breathing",move:"bridge",note:"Media status synced across app."},
+ {name:"Mobility squat flow",move:"squatReach",note:"Media status synced across app."},
+ {name:"Calisthenics skill flow",move:"skillPrep",note:"Media status synced across app."},
+ {name:"L-sit tuck prep",move:"skillPrep",note:"Media status synced across app."},
+ {name:"Crow-prep balance",move:"skillPrep",note:"Media status synced across app."},
+ {name:"Quiet conditioning circuit",move:"quietMarch",note:"Media status synced across app."},
+ {name:"Balance reset",move:"flowReset",note:"Media status synced across app."},
+ {name:"Posture builder",move:"birdDog",note:"Media status synced across app."},
+ {name:"Skill prep flow",move:"skillPrep",note:"Media status synced across app."}
 ];
 type VaultVideo={kind:"direct";src:string;credit:string;poster?:string;quality:"licensed"|"open-access"|"direct-source"|"bodywise-owned"};
 const vaultExactVideos:Record<string,VaultVideo>={
@@ -128,22 +128,22 @@ const premiumSourcePlan=[
  {name:"Studio capture",fit:"Best long-term Bodywise identity",note:"Shoot 15–25 second vertical clips for exact variations that libraries do not cover cleanly."}
 ];
 const candidateSourcePass=[
- {move:"Wall push-up",source:"FAME / Pexels / IFPE",status:"Exact real-human candidates found; do not publish until usage rights and no-intro clip start are verified."},
- {move:"Counter or chair push-up",source:"FAME Chair Pushups",status:"Exact beginner push variation found; held for licensing review instead of being reused silently."},
- {move:"Sit-to-stand",source:"FAME + clinic rehab libraries",status:"Exact real-human candidates found; useful for knee-strength track after rights check."},
- {move:"High-knee march / ankle rotations",source:"FAME",status:"Exact mobility clips found; held because FAME materials carry UBC program terms."},
- {move:"Dead bug / bird dog / side plank",source:"Lyndhurst / physio libraries",status:"Exact rehab-style candidates found; clinic-use wording means app rights still need confirmation."},
+ {move:"Wall push-up",source:"Bodywise Original Demo",status:"Resolved in app: local Bodywise-owned loop is wired into Today, Move Vault and clip collection."},
+ {move:"Counter push-up",source:"Bodywise Original Demo",status:"Resolved with the wall/counter push pattern; no borrowed clinic or YouTube clip is used."},
+ {move:"Sit-to-stand",source:"Bodywise Original Demo",status:"Resolved in app: local seated-to-standing loop is wired into knee-strength and Move Vault flows."},
+ {move:"High-knee march / ankle rotations",source:"Bodywise capture queue",status:"Still queued: do not reuse FAME clips unless redistribution rights are confirmed."},
+ {move:"Dead bug / bird dog / side plank",source:"Local/open-access clips",status:"Resolved in app with local/open-access movement loops; no YouTube-style previews."},
  {move:"Rejected source",source:"free-exercise-db-with-videos",status:"Not added: despite real-video wording, provenance points to an animated exercise set, which fails the real-people-only rule."}
 ];
 type MuscleWikiCandidate={id:number;name:string;difficulty?:string|null;category?:string|null;muscles:string[];videoCount:number;videos:{index:number;gender?:string;angle?:string;type?:string;filename?:string;path?:string;hasStream:boolean}[]};
 const muscleWikiReviewQueue=[
  {bodywise:"Forearm plank",query:"forearm plank",rule:"Must show elbows under shoulders in a static plank hold.",status:"Searchable through MuscleWiki; approve only exact forearm plank, not push-up plank."},
- {bodywise:"Knee plank",query:"knee plank",rule:"Knees down, straight shoulder-hip-knee line, no crunch or cobra transition.",status:"Needs exact candidate review before replacing placeholder."},
+ {bodywise:"Knee plank",query:"knee plank",rule:"Knees down, straight shoulder-hip-knee line, no crunch or cobra transition.",status:"Needs exact media review before this move is marked complete."},
  {bodywise:"Incline push-up",query:"incline push up",rule:"Hands elevated on bench/counter, full-body line, visible lowering and press.",status:"Search first; use stock/studio if MuscleWiki result is flat push-up only."},
- {bodywise:"Sit-to-stand",query:"sit to stand",rule:"User starts seated, stands fully, and sits/taps chair again.",status:"High priority for knee-strength track."},
- {bodywise:"Marching bridge",query:"marching glute bridge",rule:"Bridge position with alternating knee lift and level hips.",status:"Do not map ordinary glute bridge unless the march is visible."},
- {bodywise:"Bear crawl hold",query:"bear crawl hold",rule:"Quadruped hover with knees off floor; no crawling travel required.",status:"Approve only if the hover is clearly shown."},
- {bodywise:"Tucked hollow hold",query:"tuck hollow body hold",rule:"Supine hollow shape with knees tucked and low-back control.",status:"Likely needs studio capture if MuscleWiki has only full hollow hold."},
+ {bodywise:"Sit-to-stand",query:"sit to stand",rule:"User starts seated, stands fully, and sits/taps chair again.",status:"Resolved with Bodywise Original Demo; keep MuscleWiki search only for future alternate angles."},
+ {bodywise:"Marching bridge",query:"marching glute bridge",rule:"Bridge position with alternating knee lift and level hips.",status:"Resolved with Bodywise Original Demo; still reject ordinary bridge substitutions."},
+ {bodywise:"Bear crawl hold",query:"bear crawl hold",rule:"Quadruped hover with knees off floor; no crawling travel required.",status:"Resolved with Bodywise Original Demo; future sources must match the hover hold exactly."},
+ {bodywise:"Tucked hollow hold",query:"tuck hollow body hold",rule:"Supine hollow shape with knees tucked and low-back control.",status:"Resolved with Bodywise Original Demo and now visible in Move Vault."},
  {bodywise:"Crow-prep balance",query:"crow pose",rule:"Real person balance/crow prep, not an illustration or yoga title card.",status:"Can use exact crow pose as a skill milestone after review."}
 ];
 const approvedMuscleWikiMappings=[
@@ -151,7 +151,14 @@ const approvedMuscleWikiMappings=[
  {move:"Bird dog",source:"Local/open-access clip",status:"Approved in app"},
  {move:"Side plank",source:"Local/open-access clip",status:"Approved in app"},
  {move:"Bodyweight squat",source:"Bodywise direct loop",status:"Approved in app"},
- {move:"MuscleWiki stream",source:"Private API connector",status:"Ready after MuscleWiki plan upgrade"}
+ {move:"Wall push-up",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Plank shoulder taps",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Chair tap squat",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Sit-to-stand",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Marching bridge",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Tucked hollow hold",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"Bear crawl hold",source:"Bodywise Original Demo",status:"Approved in app"},
+ {move:"MuscleWiki stream",source:"Private API connector",status:"Optional expansion route after MuscleWiki plan upgrade"}
 ];
 type ShortLoopClip={move:string;source:string;url:string;loop:string;status:string;preview?:string;poster?:string;ready?:boolean;media?:"video"|"image"};
 const shortLoopCollection:ShortLoopClip[]=[
@@ -175,7 +182,7 @@ const movePreviewAliases:Record<string,string>={
  "Plank shoulder tap prep":"Plank shoulder taps",
  "Bear crawl hold":"Bear crawl hold"
 };
-const exactMoveMediaNames=new Set(["Bodyweight squat","Glute bridge","Wall push-up","Sit-to-stand","Marching bridge","Plank shoulder tap prep","Bear crawl hold","Standing calf raise","Dead bug","Forearm plank","Bird dog","Side plank"]);
+const exactMoveMediaNames=new Set(["Bodyweight squat","Glute bridge","Wall push-up","Sit-to-stand","Marching bridge","Plank shoulder tap prep","Bear crawl hold","Tucked hollow hold","Chair tap squat","Standing calf raise","Dead bug","Forearm plank","Bird dog","Side plank"]);
 function sourcingPlan(name:string){const n=name.toLowerCase();
  if(n.includes("push"))return{lead:"Push variation lead",query:`exact real human ${name} exercise demo commercial license mp4 no animation no YouTube`,provider:"YMove API, Pexels licensed stock, IFPE/FAME only after written rights confirmation",url:"https://ymove.app/exercise-api",route:"License a matching clip, then trim to the first clean rep and save as a Bodywise loop."};
  if(n.includes("squat")||n.includes("stand")||n.includes("knee"))return{lead:"Knee + squat lead",query:`exact real human ${name} exercise demo sit stand squat commercial license mp4`,provider:"YMove, Central Athlete EVL, FAME/clinic clips after written app-use permission",url:"https://www.centralathlete.com/exercise-video-library",route:"Prioritize frontal/side view, knee tracking visible, no chair reuse unless the move is actually chair-based."};
@@ -211,18 +218,18 @@ export default function Home(){
   <button className="adapt-today" onClick={()=>setAdapt(true)}><span>⚙</span><div><b>Adapt today</b><small>Change time, space or intensity</small></div><i>→</i></button>
   <section className="packs"><p className="eyebrow">MOVEMENT FAMILIES</p><h2>More variety, less randomness</h2><div>{plan.map(x=><article key={x.name}><MovementMedia move={x}/><div><small>{x.family} · {x.intensity}</small><h3>{x.name}</h3><p>{x.why}</p><div>{x.variants.map(v=><span key={v}>{v}</span>)}</div></div></article>)}</div></section>
   <section className="recovery-card"><div><p className="eyebrow">ESTIMATED RECOVERY</p><h2>Your body map</h2><small>Based on recent sessions—not a medical measurement.</small></div><div className="recovery-bars"><span><i style={{width:"82%"}}/>Core <b>82%</b></span><span><i style={{width:"64%"}}/>Upper <b>64%</b></span><span><i style={{width:"91%"}}/>Lower <b>91%</b></span></div><button className="why-button" onClick={()=>setShowWhy(v=>!v)} aria-expanded={showWhy}>{showWhy?"Hide":"Why this workout?"}<b>{showWhy?"−":"+"}</b></button>{showWhy&&<div className="why-copy"><b>Why Bodywise chose this</b><p>This rotation matches your {goal} target, {readiness} pace, age range and current time window. No convenience reuse is allowed: exact matching clips display, and missing exact clips are clearly marked for licensing or studio capture.</p></div>}</section>
-  <section className="vault-card"><div><p className="eyebrow">MOVE VAULT</p><h2>{vault.length} ways to keep growing</h2><p>Tap any move for exact media status, cues and progression context.</p></div><div>{vault.map(v=><button key={v.name} onClick={()=>setVaultMove(v)}><span>{v.name}</span><small>{M[v.move].family}</small></button>)}</div></section><section className="source-pass-card"><div><p className="eyebrow">VIDEO SOURCE PASS</p><h2>Exact clips only</h2><p>Bodywise now shows only exact matching clips. If a movement still needs licensed or studio-shot media, the app says so instead of borrowing a related video.</p></div><div>{premiumSourcePlan.map(x=><article key={x.name}><b>{x.name}</b><span>{x.fit}</span><p>{x.note}</p></article>)}</div><div className="candidate-source-list"><h3>Candidate clips under review</h3>{candidateSourcePass.map(x=><article key={x.move}><b>{x.move}</b><span>{x.source}</span><p>{x.status}</p></article>)}</div></section>
+  <section className="vault-card"><div><p className="eyebrow">MOVE VAULT</p><h2>{vault.length} ways to keep growing</h2><p>Tap any move for exact media status, cues and progression context.</p></div><div>{vault.map(v=><button key={v.name} onClick={()=>setVaultMove(v)}><span>{v.name}</span><small>{M[v.move].family}</small></button>)}</div></section><section className="source-pass-card"><div><p className="eyebrow">VIDEO SOURCE PASS</p><h2>Synced media pass</h2><p>Bodywise now keeps Today, Move Vault, clip collection and review status in sync: exact demos appear everywhere, and unresolved moves stay clearly marked instead of borrowing a related video.</p></div><div>{premiumSourcePlan.map(x=><article key={x.name}><b>{x.name}</b><span>{x.fit}</span><p>{x.note}</p></article>)}</div><div className="candidate-source-list"><h3>Resolved clips and active review queue</h3>{candidateSourcePass.map(x=><article key={x.move}><b>{x.move}</b><span>{x.source}</span><p>{x.status}</p></article>)}</div></section>
   <MuscleWikiMappingBoard/>
-  <section className="section-head"><div><p className="eyebrow">YOUR TARGETED PLAN</p><h2>{goal} movements</h2></div><span>{plan.length} selected</span></section><section className="exercise-list">{plan.map((x,i)=><article className="exercise" key={x.name}><div className="exercise-image"><MovementMedia move={x}/></div><div className="exercise-copy"><small>0{i+1} · {x.focus}</small><h3>{x.name}</h3><p>{x.cue}</p><span>If an exact clip is available, match its pace; otherwise follow the written cues until the correct clip is sourced.</span></div><aside><b>{x.seconds}</b><small>SEC</small></aside></article>)}</section></>}
+  <section className="section-head"><div><p className="eyebrow">YOUR TARGETED PLAN</p><h2>{goal} movements</h2></div><span>{plan.length} selected</span></section><section className="exercise-list">{plan.map((x,i)=><article className="exercise" key={x.name}><div className="exercise-image"><MovementMedia move={x}/></div><div className="exercise-copy"><small>0{i+1} · {x.focus}</small><h3>{x.name}</h3><p>{x.cue}</p><span>Media status is shared with Move Vault: matching Bodywise demos show here automatically, and missing clips stay clearly marked.</span></div><aside><b>{x.seconds}</b><small>SEC</small></aside></article>)}</section></>}
   {tab==="Plan"&&<PlanPage goal={goal} minutes={minutes}/>} {tab==="Community"&&<CommunityPage kudos={kudos} onKudos={()=>setKudos(v=>v+1)}/>} {tab==="Progress"&&<ProgressPage goal={goal}/>} 
   <nav className="bottom-nav provider-nav">{nav.map((x,i)=><button className={tab===x?"selected":""} onClick={()=>setTab(x)} key={x}><span>{["●","▤","◎","◔"][i]}</span>{x}</button>)}</nav>
   {adapt&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setAdapt(false)} aria-label="Close"/><section className="sheet adapt-sheet"><i/><button className="close" onClick={()=>setAdapt(false)}>×</button><p className="eyebrow">FREE UP THE PLAN</p><h2>Adapt today.</h2><fieldset><legend>Time available</legend><div className="choices">{[10,15,20].map(x=><button className={targetMinutes===x?"chosen":""} onClick={()=>setTargetMinutes(x)} key={x}>{x} min</button>)}</div></fieldset><fieldset><legend>Energy</legend><div className="choices">{(["Recover","Ready","Push"] as Readiness[]).map(x=><button className={readiness===x?"chosen":""} onClick={()=>setReadiness(x)} key={x}>{x}</button>)}</div></fieldset><label className="quiet-toggle"><span><b>Quiet mode</b><small>No jumping · small-space friendly</small></span><input type="checkbox" checked={quiet} onChange={e=>setQuiet(e.target.checked)}/></label><button className="save" onClick={()=>setAdapt(false)}>Update today’s workout</button></section></div>}
-  {vaultMove&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setVaultMove(null)} aria-label="Close"/><section className="sheet vault-sheet"><i/><button className="close" onClick={()=>setVaultMove(null)}>×</button><p className="eyebrow">MOVE VAULT GUIDE</p><h2>{vaultMove.name}</h2><div className="vault-visual"><VaultMedia item={vaultMove} move={M[vaultMove.move]}/></div><div className="vault-guide-copy"><small>{M[vaultMove.move].family} · {M[vaultMove.move].intensity}</small><h3>{M[vaultMove.move].cue}</h3><p>{M[vaultMove.move].detail}</p><b>Why it matters</b><p>{M[vaultMove.move].why}</p><b>Progressions</b><div>{M[vaultMove.move].variants.map(x=><span key={x}>{x}</span>)}</div><em>{hasVaultDemo(vaultMove,M[vaultMove.move])?"Bodywise demo: local clip shown inside the Move Vault.":"No borrowed placeholder is shown; add a Bodywise-owned demo before publishing this move as complete."}</em></div><button className="save" onClick={()=>{setVaultMove(null);setGoal("Skill Prep");setTab("Today")}}>Train related moves</button></section></div>}
+  {vaultMove&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setVaultMove(null)} aria-label="Close"/><section className="sheet vault-sheet"><i/><button className="close" onClick={()=>setVaultMove(null)}>×</button><p className="eyebrow">MOVE VAULT GUIDE</p><h2>{vaultMove.name}</h2><div className="vault-visual"><VaultMedia item={vaultMove} move={M[vaultMove.move]}/></div><div className="vault-guide-copy"><small>{M[vaultMove.move].family} · {M[vaultMove.move].intensity}</small><h3>{M[vaultMove.move].cue}</h3><p>{M[vaultMove.move].detail}</p><b>Why it matters</b><p>{M[vaultMove.move].why}</p><b>Progressions</b><div>{M[vaultMove.move].variants.map(x=><span key={x}>{x}</span>)}</div><em>{hasVaultDemo(vaultMove,M[vaultMove.move])?"Bodywise demo: local clip shown inside the Move Vault.":"No Bodywise demo is shown yet; add an owned or approved clip before marking this move complete."}</em></div><button className="save" onClick={()=>{setVaultMove(null);setGoal("Skill Prep");setTab("Today")}}>Train related moves</button></section></div>}
   {profile&&<div className="overlay" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setProfile(false)} aria-label="Close"/><section className="sheet"><i/><button className="close" onClick={()=>setProfile(false)}>×</button><p className="eyebrow">PERSONALISE YOUR START</p><h2>Make the plan yours.</h2><p className="note">Age and experience tune the starting pace. Sex is optional health context and does not change your workout.</p><fieldset><legend>Training target</legend><div className="choices target-choices">{(Object.keys(goals) as Goal[]).map(x=><button className={goal===x?"chosen":""} onClick={()=>chooseGoal(x)} key={x}>{x}</button>)}</div></fieldset><fieldset><legend>Age range</legend><div className="choices ages">{ages.map(x=><button className={age===x?"chosen":""} onClick={()=>setAge(x)} key={x}>{x}</button>)}</div></fieldset><fieldset><legend>Sex · optional health context</legend><div className="choices">{(["Female","Male","Prefer not to say"] as Sex[]).map(x=><button className={sex===x?"chosen":""} onClick={()=>setSex(x)} key={x}>{x}</button>)}</div></fieldset><fieldset><legend>Experience</legend><div className="choices">{(["Beginner","Intermediate","Advanced"] as Level[]).map(x=><button className={level===x?"chosen":""} onClick={()=>setLevel(x)} key={x}>{x}</button>)}</div></fieldset><div className="preview"><span>{goal} practice</span><b>{minutes} min · {plan.length} targeted movements · {vault.length} vault variations</b></div><button className="save" onClick={saveProfile}>Save my plan</button></section></div>}
   {session&&<section className="session premium-session" role="dialog" aria-modal="true"><header><button onClick={()=>{setSession(false);setRunning(false)}}>×</button><span>{goal.toUpperCase()} · MOVE {active+1} OF {plan.length}</span><button>◒</button></header><div className="live-metrics"><span><small>HEART RATE · DEMO</small><b>124 <i>BPM</i></b></span><span><small>EFFORT · DEMO</small><b>6 <i>/10</i></b></span><span><small>ACTIVE · DEMO</small><b>38 <i>KCAL</i></b></span></div><div className="session-title"><p>{current.family}</p><h2>{current.name}</h2></div><div className="session-visual"><MovementMedia move={current} large/></div><div className="session-tools"><button className={audioHints?"on":""} onClick={()=>setAudioHints(v=>!v)}>◖ Audio hints</button><button className={caption?"on":""} onClick={()=>setCaption(v=>!v)}>CC Captions</button><button onClick={()=>setRotation(v=>(v+1)%3)}>◐ Swap</button><button>♫ Focus mix</button></div>{caption&&<p className="caption">{current.detail}</p>}<div className="cue"><span>COACH KAI</span><b>{current.cue}</b><p>{audioHints?"Audio hint on · ":""}{current.detail}</p></div><div className="timer-row"><div className="timer" style={{background:"conic-gradient(#e8ff48 "+((current.seconds-left)/current.seconds*100)+"%,#2e302a 0)"}}><div><b>{left}</b><span>SECONDS</span></div></div><button onClick={()=>setRunning(v=>!v)}>{running?"Ⅱ":"▶"}<span>{running?"Pause":"Resume"}</span></button><button className="next" onClick={next}>→<span>{active===plan.length-1?"Finish":"Next"}</span></button></div><div className="session-progress"><i style={{width:((active+1)/plan.length*100)+"%"}}/></div></section>}
   {finish&&<div className="overlay finish" role="dialog" aria-modal="true"><button className="backdrop" onClick={()=>setFinish(false)} aria-label="Close"/><section className="finish-card"><span>✓</span><p className="eyebrow">SESSION COMPLETE</p><h2>Strong work.</h2><p>You kept the promise you made to yourself today. Next time, spin a new rotation to keep it fresh.</p><div className="summary-metrics"><b>{minutes}<small>MIN</small></b><b>{plan.length}<small>MOVES</small></b><b>+1<small>STREAK</small></b></div><div className="rating"><small>HOW DID THAT FEEL?</small><div>{["Too easy","Just right","Too hard"].map(x=><button key={x}>{x}</button>)}</div></div><button className="share-result" onClick={()=>setRotation(v=>(v+1)%3)}>Unlock next variation</button><button className="done" onClick={()=>setFinish(false)}>Done</button></section></div>}
  </main>}
-function PlanPage({goal,minutes}:{goal:Goal;minutes:number}){const days=[{d:"MON",n:"14",s:"DONE",t:"Foundation"},{d:"TUE",n:"15",s:"REST",t:"Mobility"},{d:"WED",n:"16",s:"TODAY",t:goal},{d:"FRI",n:"18",s:"UP NEXT",t:"Fresh rotation"},{d:"SUN",n:"20",s:"OPTIONAL",t:"Skill prep"}];return <section className="platform-page plan-page"><p className="eyebrow">YOUR CUSTOM PLAN</p><h1>Stay<br/><em>curious.</em></h1><p className="page-lede">A flexible week that rotates movement families so users get novelty without losing structure.</p><div className="plan-summary"><span><b>3</b> days / week</span><span><b>{minutes}</b> min / session</span><span><b>{Object.keys(goals).length}</b> goal packs</span></div><div className="week-plan">{days.map(x=><article className={x.s==="TODAY"?"today":""} key={x.d}><div><small>{x.d}</small><b>{x.n}</b></div><span>{x.s}</span><h3>{x.t}</h3><p>{x.s==="REST"?"Breathe · stretch · walk":minutes+" min · Coach Kai"}</p>{x.s==="TODAY"&&<button>Start →</button>}</article>)}</div><div className="plan-controls"><h2>Plan upgrades</h2><button><span>Rotation logic</span><b>3 versions per goal →</b></button><button><span>Boredom guard</span><b>Shuffle + vault →</b></button><button><span>Media promise</span><b>Exact clips only →</b></button></div><div className="coach-program"><span>COACH KAI · BLOCK 1</span><h2>Own the basics, then vary them.</h2><p>The app now teaches families, progressions and swaps — the part that keeps people from quitting after week one.</p><i>WEEK 2 OF 4</i></div></section>}
+function PlanPage({goal,minutes}:{goal:Goal;minutes:number}){const days=[{d:"MON",n:"14",s:"DONE",t:"Foundation"},{d:"TUE",n:"15",s:"REST",t:"Mobility"},{d:"WED",n:"16",s:"TODAY",t:goal},{d:"FRI",n:"18",s:"UP NEXT",t:"Fresh rotation"},{d:"SUN",n:"20",s:"OPTIONAL",t:"Skill prep"}];return <section className="platform-page plan-page"><p className="eyebrow">YOUR CUSTOM PLAN</p><h1>Stay<br/><em>curious.</em></h1><p className="page-lede">A flexible week that rotates movement families so users get novelty without losing structure.</p><div className="plan-summary"><span><b>3</b> days / week</span><span><b>{minutes}</b> min / session</span><span><b>{Object.keys(goals).length}</b> goal packs</span></div><div className="week-plan">{days.map(x=><article className={x.s==="TODAY"?"today":""} key={x.d}><div><small>{x.d}</small><b>{x.n}</b></div><span>{x.s}</span><h3>{x.t}</h3><p>{x.s==="REST"?"Breathe · stretch · walk":minutes+" min · Coach Kai"}</p>{x.s==="TODAY"&&<button>Start →</button>}</article>)}</div><div className="plan-controls"><h2>Plan upgrades</h2><button><span>Rotation logic</span><b>3 versions per goal →</b></button><button><span>Boredom guard</span><b>Shuffle + vault →</b></button><button><span>Media promise</span><b>Synced across app →</b></button></div><div className="coach-program"><span>COACH KAI · BLOCK 1</span><h2>Own the basics, then vary them.</h2><p>The app now teaches families, progressions and swaps — the part that keeps people from quitting after week one.</p><i>WEEK 2 OF 4</i></div></section>}
 function CommunityPage({kudos,onKudos}:{kudos:number;onKudos:()=>void}){return <section className="platform-page community-page"><p className="eyebrow">BODYWISE CLUB</p><h1>Better<br/><em>together.</em></h1><p className="page-lede">A supportive, opt-in space for showing up — with weekly variety challenges.</p><article className="challenge"><span>THIS WEEK’S CHALLENGE</span><h2>Try 3 different rotations.</h2><div><i style={{width:"58%"}}/></div><p><b>7</b> of 12 sessions · 13 days left</p><button>View challenge →</button></article><div className="club-strip"><span><b>2,418</b> members</span><span><b>386</b> trained today</span><span><b>94%</b> supportive</span></div><div className="feed"><h2>Club feed</h2><article><div className="member">AR</div><div><b>Amara R.</b><small>2 HOURS AGO · CORE CONTROL</small><p>The side plank rotation finally made core day feel different.</p><button onClick={onKudos}>▲ {kudos} kudos</button><button>Reply</button></div></article><article><div className="member rust">JL</div><div><b>Jon L.</b><small>YESTERDAY · QUIET SWEAT</small><p>Quiet conditioning in a hotel room. Zero jumping, still sweaty.</p><button>▲ 24 kudos</button><button>Reply</button></div></article></div><p className="privacy-note">Community sharing is opt-in. Your age, sex and health context stay private.</p></section>}
 function ProgressPage({goal}:{goal:Goal}){return <section className="platform-page progress-page"><p className="eyebrow">YOUR PROGRESS</p><h1>Proof of<br/><em>practice.</em></h1><p className="page-lede">Track consistency, capacity, movement variety and the skills you are earning.</p><div className="score-grid"><article><span>THIS WEEK</span><b>3<small>/3</small></b><p>sessions complete</p></article><article><span>VARIETY SCORE</span><b>84<small>%</small></b><p>new movement exposure</p></article><article><span>TRAINING TIME</span><b>62<small> MIN</small></b><p>+14% vs last week</p></article><article><span>FOCUS</span><b className="focus-score">{goal}</b><p>current block</p></article></div><article className="load-chart"><div><span>TRAINING LOAD</span><b>Balanced</b></div><div className="bars">{[42,61,36,78,58,90,70].map((x,i)=><i key={i} style={{height:x+"%"}}/>)}</div>{["MON","TUE","WED","THU","FRI","SAT","SUN"].map(x=><small key={x}>{x}</small>)}</article><article className="skill-path"><span>SKILL PATH · PUSH-UP</span><h2>Build it one step at a time.</h2>{["Wall push-up","Incline push-up","Slow negative","Full push-up"].map((x,i)=><div className={i<2?"done":i===2?"current":""} key={x}><i>{i<2?"✓":i+1}</i><span><b>{x}</b><small>{i<2?"Mastered":i===2?"In progress · 68%":"Locked"}</small></span></div>)}</article><article className="latest-win"><span>YOUR LATEST WIN</span><h2>Unlocked rotation variety</h2><p>More choices, same bodyweight foundation, Bodywise-owned media preferred.</p><button>Share achievement →</button></article></section>}
 
