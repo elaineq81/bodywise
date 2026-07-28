@@ -48,6 +48,12 @@ After cloning on a Mac with Xcode installed:
 
 For the most professional App Store version, convert the core workout experience into a fully packaged Capacitor bundle or React Native/Swift app, while keeping Convex for cloud sync and StoreKit for subscriptions.
 
+## Cloud build option
+
+If you do not have a Mac, use the GitHub Actions workflow in `.github/workflows/ios-cloud-build.yml`.
+
+The first run can build an unsigned iOS Simulator app on GitHub's macOS runner. TestFlight upload is prepared, but it requires Apple signing and App Store Connect API secrets in GitHub.
+
 ## Privacy manifest
 
 A starter `ios/App/App/PrivacyInfo.xcprivacy` is included and wired into the Xcode app target. It currently declares no tracking and no collected data. Update it before submission if Bodywise starts collecting account, health, analytics, advertising, or tracking data.
