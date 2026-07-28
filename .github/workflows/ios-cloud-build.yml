@@ -1,4 +1,4 @@
-name: Bodywise iOS cloud build
+name: Bodywise Remedy iOS cloud build
 
 on:
   workflow_dispatch:
@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 45
 
     steps:
-      - name: Check out Bodywise
+      - name: Check out Bodywise Remedy
         uses: actions/checkout@v4
 
       - name: Set up Node
@@ -77,7 +77,7 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.upload_to_testflight == true }}
 
     steps:
-      - name: Check out Bodywise
+      - name: Check out Bodywise Remedy
         uses: actions/checkout@v4
 
       - name: Set up Node

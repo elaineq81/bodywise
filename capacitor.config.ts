@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.elaineq.bodywise',
-  appName: 'Bodywise',
+  appName: 'Bodywise Remedy',
   webDir: 'dist/client',
   bundledWebRuntime: false,
   server: {
@@ -10,7 +10,7 @@ const config: CapacitorConfig = {
     cleartext: false
   },
   ios: {
-    scheme: 'Bodywise'
+    scheme: 'BodywiseRemedy'
   }
 };
 
