@@ -31,7 +31,7 @@ on:
       - ".github/workflows/ios-cloud-build.yml"
 
 concurrency:
-  group: bodywise-ios-${{ github.ref }}
+  group: bodywise-ios-${{ github.ref }}-${{ github.sha }}
   cancel-in-progress: true
 
 jobs:
