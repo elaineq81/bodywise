@@ -100,7 +100,9 @@ jobs:
           test -n "$APPSTORE_PRIVATE_KEY"
           test -n "$APPSTORE_KEY_ID"
           mkdir -p "$RUNNER_TEMP/appstore"
+          mkdir -p "$HOME/.appstoreconnect/private_keys"
           printf "%s" "$APPSTORE_PRIVATE_KEY" > "$RUNNER_TEMP/appstore/AuthKey_${APPSTORE_KEY_ID}.p8"
+          cp "$RUNNER_TEMP/appstore/AuthKey_${APPSTORE_KEY_ID}.p8" "$HOME/.appstoreconnect/private_keys/AuthKey_${APPSTORE_KEY_ID}.p8"
 
       - name: Import manual Apple signing assets
         id: manual-signing
