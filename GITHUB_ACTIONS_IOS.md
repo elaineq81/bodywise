@@ -37,6 +37,16 @@ Use the Bundle ID already configured for Bodywise:
 
 `com.elaineq.bodywise`
 
+
+## Manual signing fallback for TestFlight
+
+If automatic signing fails in GitHub Actions, add these extra repository secrets once:
+
+- `IOS_DISTRIBUTION_CERTIFICATE_BASE64` — Base64 text of the Apple Distribution `.p12` certificate.
+- `IOS_CERTIFICATE_PASSWORD` — the password used when exporting the `.p12` certificate.
+- `IOS_PROVISION_PROFILE_BASE64` — Base64 text of the App Store Connect `.mobileprovision` profile for `com.elaineq.bodywise`.
+
+This is the most stable no-Mac setup: GitHub imports the certificate/profile into the temporary macOS runner, signs Bodywise, exports the IPA, then uploads it to App Store Connect/TestFlight.
 ## How to run the first cloud build
 
 1. Open GitHub.
