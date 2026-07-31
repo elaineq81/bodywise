@@ -1,15 +1,32 @@
-import { env } from "cloudflare:workers";
 import { drizzle } from "drizzle-orm/d1";
 import * as schema from "./schema";
 
-export function getDb() {
-  if (!env.DB) {
+type D1Binding = Parameters<typeof drizzle>[0];
+
+function resolveD1Binding(binding?: D1Binding) {
+  if (binding) return binding;
+
+  const globalBinding = (globalThis as typeof globalThis & {
+    DB?: D1Binding;
+    env?: { DB?: D1Binding };
+  });
+
+  const dbBinding = globalBinding.DB ?? globalBinding.env?.DB;
+  if (!dbBinding) {
     throw new Error(
-      "Cloudflare D1 binding `DB` is unavailable. Set the `d1` field in .openai/hosting.json to `DB` or let your control plane inject the real binding values before using the database."
+      "Cloudflare D1 binding `DB` is unavailable. Pass a D1 binding to getDb(DB), configure the `d1` field in .openai/hosting.json, or avoid importing db/index.ts in non-Cloudflare runtimes."
     );
   }
 
-  return drizzle(env.DB, { schema });
+  return dbBinding;
 }
 
-export const db = getDb();
+export function getDb(binding?: D1Binding) {
+  return drizzle(resolveD1Binding(binding), { schema });
+}
+
+export const db = new Proxy({} as ReturnType<typeof getDb>, {
+  get(_target, property, receiver) {
+    return Reflect.get(getDb(), property, receiver);
+  },
+});

@@ -4,7 +4,6 @@ const config: CapacitorConfig = {
   appId: 'com.elaineq.bodywise',
   appName: 'Bodywise Remedy',
   webDir: 'dist/client',
-  bundledWebRuntime: false,
   server: {
     url: 'https://bodywise-calisthenics-coach.paramount-ma-0270.chatgpt.site',
     cleartext: false
