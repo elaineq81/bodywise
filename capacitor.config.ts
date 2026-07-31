@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'Bodywise Remedy',
   webDir: 'dist/client',
   server: {
-    url: 'https://bodywise-calisthenics-coach.paramount-ma-0270.chatgpt.site',
+    url: 'https://bodywise-snowy.vercel.app',
     cleartext: false
   },
   ios: {
@@ -14,3 +14,4 @@ const config: CapacitorConfig = {
 };
 
 export default config;
+

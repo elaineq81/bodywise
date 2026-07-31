@@ -6,7 +6,7 @@ Bodywise Remedy is now configured for a Capacitor iOS wrapper.
 
 The current Bodywise Remedy app is a deployed web app with server-backed routing, so the iOS shell is configured to open the production Bodywise Remedy URL inside Capacitor's native iOS WebView:
 
-https://bodywise-calisthenics-coach.paramount-ma-0270.chatgpt.site
+https://bodywise-snowy.vercel.app
 
 This is the fastest path to an Xcode-ready iPhone build while preserving the app that is already live.
 
@@ -57,3 +57,4 @@ The first run can build an unsigned iOS Simulator app on GitHub's macOS runner. 
 ## Privacy manifest
 
 A starter `ios/App/App/PrivacyInfo.xcprivacy` is included and wired into the Xcode app target. It currently declares no tracking and no collected data. Update it before submission if Bodywise Remedy starts collecting account, health, analytics, advertising, or tracking data.
+
