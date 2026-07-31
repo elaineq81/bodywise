@@ -35,8 +35,8 @@ export default function TermsPage() {
       <section className="policy-card">
         <h2>Subscriptions</h2>
         <p>
-          Premium access is planned as a 7-day free trial followed by $6.99 monthly or $59.99 yearly unless cancelled before the trial ends.
-          Final purchase terms are shown by Apple before confirmation and are managed through your Apple ID.
+          Premium access may be offered through Apple as a 7-day free trial followed by $6.99 monthly or $59.99 yearly unless cancelled before the trial ends.
+          Apple shows the final trial, renewal, cancellation, tax, and regional pricing terms before confirmation. Subscription management is handled through your Apple ID.
         </p>
       </section>
 

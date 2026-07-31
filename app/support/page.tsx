@@ -13,7 +13,7 @@ export default function SupportPage() {
         <p className="eyebrow">SUPPORT</p>
         <h1>We want Bodywise Remedy to feel simple, safe, and clear.</h1>
         <p>
-          Use this page for common help topics while the full support desk is being prepared for App Store launch.
+          Use this page for common help topics for workouts, safety, and subscription questions.
         </p>
       </section>
 

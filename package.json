@@ -16,7 +16,8 @@
     "ios:build": "npm run build && npx cap sync ios",
     "ios:add": "npx cap add ios",
     "ios:sync": "npm run build && npx cap sync ios",
-    "ios:open": "npx cap open ios"
+    "ios:open": "npx cap open ios",
+    "audit:release": "node scripts/release-audit.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.4.2",

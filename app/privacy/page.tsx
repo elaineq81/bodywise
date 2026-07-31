@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         <h2>What the app currently stores</h2>
         <p>
           The current app experience can store your selected goal, age range, sex selection, experience level, pain or limitation preference,
-          mood/body check-ins, workout feedback, session count, and estimated training load. These are used to personalize the next workout.
+          mood/body check-ins, workout feedback, session count, estimated training load, and lightweight app events such as onboarding, workout start, workout completion, and paywall views. These are used to personalize the next workout and understand whether the app is useful.
         </p>
         <p>
           At this stage, these workout preferences and progress signals are stored locally on your device/browser unless a future account sync
