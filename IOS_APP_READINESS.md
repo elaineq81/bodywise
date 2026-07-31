@@ -58,3 +58,12 @@ The first run can build an unsigned iOS Simulator app on GitHub's macOS runner. 
 
 A starter `ios/App/App/PrivacyInfo.xcprivacy` is included and wired into the Xcode app target. It currently declares no tracking and no collected data. Update it before submission if Bodywise Remedy starts collecting account, health, analytics, advertising, or tracking data.
 
+
+## Apple In-App Purchase product IDs
+
+Create one auto-renewable subscription group in App Store Connect named `Bodywise Remedy Premium`, then create these products exactly:
+
+- `bodywise_remedy_premium_monthly` — 1 month — USD 6.99 — 7-day free trial introductory offer
+- `bodywise_remedy_premium_yearly` — 1 year — USD 59.99 — 7-day free trial introductory offer
+
+The app uses `capacitor-plugin-cdv-purchase` with Apple StoreKit 2. Purchases and restore actions only work inside the installed iPhone/TestFlight app after these matching App Store Connect products are created and available for testing.

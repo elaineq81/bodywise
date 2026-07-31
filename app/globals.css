@@ -97,3 +97,6 @@
 .legal-footer a{border-radius:999px;background:#171914;color:#e8ff48;text-decoration:none;padding:9px 11px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.7px}
 .legal-footer p{margin:0;color:#66685f;font-size:9px;line-height:1.45}
 @media(max-width:420px){.policy-hero h1{font-size:36px}.policy-card h2{font-size:24px}.policy-card p{font-size:13px}}
+
+/* Real Apple purchase polish */
+.pricing-grid button:disabled,.share-result:disabled{opacity:.62;cursor:wait}.purchase-status{margin:10px 0!important;border-radius:14px;background:#eef6d0!important;color:#4f5528!important;padding:10px 11px!important;font-size:9px!important;font-weight:900!important;line-height:1.35!important;text-align:left!important}.purchase-status.error{background:#ffe4dc!important;color:#7a2d18!important}.restore-purchases{width:100%;height:44px;margin-top:8px;border:1px solid rgba(23,25,20,.16);background:#fffdf7;border-radius:14px;font-size:10px;font-weight:900;text-transform:uppercase}
