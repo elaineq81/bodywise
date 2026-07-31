@@ -166,3 +166,10 @@
 .upgrade-card>span{margin-top:0!important}
 .upgrade-card .eyebrow{margin-top:10px}
 @media(max-width:380px){.subscription-hero-art{height:188px}.subscription-hero-art b{font-size:25px}}
+
+
+/* Customer-facing video badge cleanup */
+.entry-video:after,.loop-badge{display:none!important}
+.media-credit{opacity:.78;background:rgba(17,19,15,.72);backdrop-filter:blur(10px)}
+.live-metrics small{letter-spacing:.7px}
+
