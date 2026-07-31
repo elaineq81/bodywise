@@ -79,3 +79,21 @@
  .premium-depth article{min-width:76%;scroll-snap-align:start}
  .saved-plan-card h2,.progress-depth h2{font-size:25px}
 }
+
+/* App Store readiness pages */
+.policy-page{max-width:760px;min-height:100vh;margin:auto;padding:24px 18px 54px;background:radial-gradient(circle at 20% -80px,#f5ffb8 0,#f4f1e9 260px,#ece6d8 100%);color:#171914}
+.policy-back{display:inline-flex;margin-bottom:18px;border:1px solid rgba(23,25,20,.12);border-radius:999px;background:#fffdf7;color:#171914;text-decoration:none;padding:10px 13px;font-size:12px;font-weight:900}
+.policy-hero{border-radius:30px;background:#171914;color:#fff;padding:28px 22px;box-shadow:0 22px 48px rgba(23,25,20,.18)}
+.policy-hero .eyebrow{color:#e8ff48}
+.policy-hero h1{margin:0;font:600 46px/.9 var(--display);text-transform:uppercase;letter-spacing:-.6px}
+.policy-hero p{max-width:560px;color:#d8dbcf;font-size:14px;line-height:1.55}
+.policy-hero small{color:#aeb3a5;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.policy-card{margin-top:12px;border:1px solid rgba(23,25,20,.1);border-radius:24px;background:#fffdf7;padding:20px;box-shadow:0 14px 30px rgba(23,25,20,.08)}
+.policy-card h2{margin:0 0 8px;font:600 28px/.95 var(--display);text-transform:uppercase}
+.policy-card p{margin:8px 0 0;color:#55574f;font-size:14px;line-height:1.6}
+.legal-footer{margin:24px 14px 0;padding:16px 16px 18px;border-radius:22px;background:#fffdf7;border:1px solid rgba(23,25,20,.1);box-shadow:0 12px 26px rgba(23,25,20,.08)}
+.legal-footer b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#6f3f2b}
+.legal-footer div{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.legal-footer a{border-radius:999px;background:#171914;color:#e8ff48;text-decoration:none;padding:9px 11px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.7px}
+.legal-footer p{margin:0;color:#66685f;font-size:9px;line-height:1.45}
+@media(max-width:420px){.policy-hero h1{font-size:36px}.policy-card h2{font-size:24px}.policy-card p{font-size:13px}}
