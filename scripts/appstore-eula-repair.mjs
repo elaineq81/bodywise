@@ -11,14 +11,16 @@ const issuerId =
 const privateKeyRaw =
   process.env.APP_STORE_CONNECT_PRIVATE_KEY || process.env.APPSTORE_PRIVATE_KEY;
 
-if (!keyId || !issuerId || !privateKeyRaw) {
+if (!keyId || !privateKeyRaw) {
   throw new Error(
     [
       "Missing App Store Connect API credentials.",
       "Required secrets:",
       "- APP_STORE_CONNECT_PRIVATE_KEY or APPSTORE_PRIVATE_KEY",
       "- APP_STORE_CONNECT_KEY_ID or APPSTORE_KEY_ID",
-      "- APP_STORE_CONNECT_ISSUER_ID or APPSTORE_ISSUER_ID",
+      "- APP_STORE_CONNECT_ISSUER_ID or APPSTORE_ISSUER_ID for Team API keys",
+      "",
+      "Individual API keys do not use an issuer ID; the script will use Apple's required sub:user token form when no issuer is supplied.",
     ].join("\n"),
   );
 }
@@ -77,15 +79,22 @@ function derToJose(signature, partLength = 32) {
     .replace(/\//g, "_");
 }
 
+let tokenMode = issuerId ? "team" : "individual";
+
 function createJwt() {
   const now = Math.floor(Date.now() / 1000);
   const header = { alg: "ES256", kid: keyId, typ: "JWT" };
   const payload = {
-    iss: issuerId,
     iat: now,
     exp: now + 20 * 60,
     aud: "appstoreconnect-v1",
   };
+
+  if (tokenMode === "team") {
+    payload.iss = issuerId;
+  } else {
+    payload.sub = "user";
+  }
 
   const signingInput = `${base64url(JSON.stringify(header))}.${base64url(
     JSON.stringify(payload),
@@ -112,6 +121,14 @@ async function appStoreRequest(path, options = {}) {
   const body = text ? JSON.parse(text) : null;
 
   if (!response.ok) {
+    if (response.status === 401 && tokenMode === "team") {
+      tokenMode = "individual";
+      console.log(
+        "Team-key token was not accepted; retrying with Apple's Individual API Key token format.",
+      );
+      return appStoreRequest(path, options);
+    }
+
     throw new Error(
       `App Store Connect API ${response.status} ${response.statusText}: ${JSON.stringify(
         body,
@@ -188,7 +205,10 @@ function appendEula(description = "") {
   return { changed: true, description: nextDescription };
 }
 
-const versionsUrl = new URL(`/v1/apps/${appId}/appStoreVersions`, "https://api.appstoreconnect.apple.com");
+const versionsUrl = new URL(
+  `/v1/apps/${appId}/appStoreVersions`,
+  "https://api.appstoreconnect.apple.com",
+);
 versionsUrl.searchParams.set("filter[platform]", "IOS");
 versionsUrl.searchParams.set("limit", "50");
 
