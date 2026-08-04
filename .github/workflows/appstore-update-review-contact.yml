@@ -1,0 +1,38 @@
+name: App Store update review contact
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_store_version:
+        description: "App Store version to update"
+        required: true
+        default: "1.0"
+
+jobs:
+  update-review-contact:
+    name: Update App Review contact details
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out Bodywise Remedy
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Update review contact details
+        env:
+          APP_STORE_CONNECT_APP_ID: "6795566131"
+          APP_STORE_VERSION: ${{ inputs.app_store_version }}
+          APP_STORE_PLATFORM: "IOS"
+          APP_REVIEW_CONTACT_FIRST_NAME: ${{ secrets.APP_REVIEW_CONTACT_FIRST_NAME }}
+          APP_REVIEW_CONTACT_LAST_NAME: ${{ secrets.APP_REVIEW_CONTACT_LAST_NAME }}
+          APP_REVIEW_CONTACT_EMAIL: ${{ secrets.APP_REVIEW_CONTACT_EMAIL }}
+          APP_REVIEW_CONTACT_PHONE: ${{ secrets.APP_REVIEW_CONTACT_PHONE }}
+          APPSTORE_PRIVATE_KEY: ${{ secrets.APPSTORE_PRIVATE_KEY || secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          APPSTORE_KEY_ID: ${{ secrets.APPSTORE_KEY_ID || secrets.APP_STORE_CONNECT_KEY_ID }}
+          APPSTORE_ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID || secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        run: node scripts/appstore-update-review-contact.mjs
