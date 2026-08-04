@@ -262,7 +262,7 @@ const submission = await createReviewSubmission();
 const submissionId = submission.data.id;
 console.log(`Using review submission ${submissionId} (${submission.data.attributes?.state || "new"}).`);
 
-await setAppVersionForReview(submissionId, version.id);
+
 await addAppVersionToSubmission(submissionId, version.id);
 
 await bestEffortSubmitSubscriptionGroup();
@@ -272,5 +272,6 @@ for (const subscriptionId of subscriptionIds) {
 
 await submitReviewSubmission(submissionId);
 console.log("Bodywise Remedy resubmission workflow completed.");
+
 
 
