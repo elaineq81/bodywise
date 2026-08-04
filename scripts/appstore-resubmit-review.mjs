@@ -140,7 +140,7 @@ async function getAppStoreVersion() {
   return candidates.find((version) => preferredStates.has(version.attributes?.appStoreState)) || candidates[0];
 }
 
-async function createReviewSubmission(versionId) {
+async function createReviewSubmission() {
   try {
     return await api("/v1/reviewSubmissions", {
       method: "POST",
@@ -150,7 +150,6 @@ async function createReviewSubmission(versionId) {
           attributes: { platform },
           relationships: {
             app: { data: { type: "apps", id: appId } },
-            appStoreVersionForReview: { data: { type: "appStoreVersions", id: versionId } },
           },
         },
       }),
@@ -164,31 +163,6 @@ async function createReviewSubmission(versionId) {
     );
     if (!existing) throw error;
     return { data: existing };
-  }
-}
-
-async function setAppVersionForReview(submissionId, versionId) {
-  try {
-    const response = await api(`/v1/reviewSubmissions/${submissionId}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        data: {
-          type: "reviewSubmissions",
-          id: submissionId,
-          relationships: {
-            appStoreVersionForReview: { data: { type: "appStoreVersions", id: versionId } },
-          },
-        },
-      }),
-    });
-    console.log(`Set app version ${versionString} as the version for review.`);
-    return response;
-  } catch (error) {
-    if (isAlreadyOrNotNeeded(error)) {
-      console.log(`App version-for-review relationship appears already handled: ${compactErrors(error)}`);
-      return null;
-    }
-    throw error;
   }
 }
 
@@ -209,9 +183,9 @@ async function addAppVersionToSubmission(submissionId, versionId) {
     console.log(`Added app version ${versionString} to review submission.`);
     return response;
   } catch (error) {
-    if (isAlreadyOrNotNeeded(error)) {
-      console.log(`App version item appears already handled: ${compactErrors(error)}`);
-      return null;
+    console.log(`Could not add app version to review submission: ${compactErrors(error)}`);
+    if (error?.body) {
+      console.log(JSON.stringify(error.body, null, 2));
     }
     throw error;
   }
@@ -284,7 +258,7 @@ async function submitReviewSubmission(submissionId) {
 const version = await getAppStoreVersion();
 console.log(`Found Bodywise Remedy iOS ${versionString}: ${version.id} (${version.attributes?.appStoreState || "unknown state"}).`);
 
-const submission = await createReviewSubmission(version.id);
+const submission = await createReviewSubmission();
 const submissionId = submission.data.id;
 console.log(`Using review submission ${submissionId} (${submission.data.attributes?.state || "new"}).`);
 
@@ -298,4 +272,5 @@ for (const subscriptionId of subscriptionIds) {
 
 await submitReviewSubmission(submissionId);
 console.log("Bodywise Remedy resubmission workflow completed.");
+
 
