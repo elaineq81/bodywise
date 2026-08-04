@@ -187,6 +187,14 @@ async function addAppVersionToSubmission(submissionId, versionId) {
     if (error?.body) {
       console.log(JSON.stringify(error.body, null, 2));
     }
+
+    const text = JSON.stringify(error?.body || {});
+    const match = text.match(/reviewSubmission with id ([0-9a-f-]+)/i);
+    if (match?.[1]) {
+      console.log(`App version is already attached to original review submission ${match[1]}; switching to resubmit that submission.`);
+      return { otherSubmissionId: match[1] };
+    }
+
     throw error;
   }
 }
@@ -263,15 +271,17 @@ const submissionId = submission.data.id;
 console.log(`Using review submission ${submissionId} (${submission.data.attributes?.state || "new"}).`);
 
 
-await addAppVersionToSubmission(submissionId, version.id);
+const appVersionItem = await addAppVersionToSubmission(submissionId, version.id);
+const submissionIdForFinalSubmit = appVersionItem?.otherSubmissionId || submissionId;
 
 await bestEffortSubmitSubscriptionGroup();
 for (const subscriptionId of subscriptionIds) {
   await bestEffortSubmitSubscription(subscriptionId);
 }
 
-await submitReviewSubmission(submissionId);
+await submitReviewSubmission(submissionIdForFinalSubmit);
 console.log("Bodywise Remedy resubmission workflow completed.");
+
 
 
 
