@@ -5,11 +5,11 @@ const APPLE_STANDARD_EULA_URL =
 
 const appId = process.env.APP_STORE_CONNECT_APP_ID || "6795566131";
 const versionString = process.env.APP_STORE_VERSION || "1.0";
-const keyId = process.env.APP_STORE_CONNECT_KEY_ID || process.env.APPSTORE_KEY_ID;
+const keyId = process.env.APPSTORE_KEY_ID || process.env.APP_STORE_CONNECT_KEY_ID;
 const issuerId =
-  process.env.APP_STORE_CONNECT_ISSUER_ID || process.env.APPSTORE_ISSUER_ID;
+  process.env.APPSTORE_ISSUER_ID || process.env.APP_STORE_CONNECT_ISSUER_ID;
 const privateKeyRaw =
-  process.env.APP_STORE_CONNECT_PRIVATE_KEY || process.env.APPSTORE_PRIVATE_KEY;
+  process.env.APPSTORE_PRIVATE_KEY || process.env.APP_STORE_CONNECT_PRIVATE_KEY;
 
 if (!keyId || !privateKeyRaw) {
   throw new Error(
@@ -99,12 +99,11 @@ function createJwt() {
   const signingInput = `${base64url(JSON.stringify(header))}.${base64url(
     JSON.stringify(payload),
   )}`;
-  const derSignature = sign(
-    "sha256",
-    Buffer.from(signingInput),
-    createPrivateKey(privateKey),
-  );
-  return `${signingInput}.${derToJose(derSignature)}`;
+  const rawSignature = sign("sha256", Buffer.from(signingInput), {
+    key: createPrivateKey(privateKey),
+    dsaEncoding: "ieee-p1363",
+  });
+  return `${signingInput}.${base64url(rawSignature)}`;
 }
 
 async function appStoreRequest(path, options = {}) {
@@ -249,3 +248,5 @@ await appStoreRequest(`/v1/appStoreVersionLocalizations/${localization.id}`, {
 console.log(
   `Added Apple Standard EULA link to ${localization.attributes?.locale || "selected"} App Description for Bodywise Remedy iOS ${versionString}.`,
 );
+
+
