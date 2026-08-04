@@ -140,7 +140,7 @@ async function getAppStoreVersion() {
   return candidates.find((version) => preferredStates.has(version.attributes?.appStoreState)) || candidates[0];
 }
 
-async function createReviewSubmission() {
+async function createReviewSubmission(versionId) {
   try {
     return await api("/v1/reviewSubmissions", {
       method: "POST",
@@ -150,6 +150,7 @@ async function createReviewSubmission() {
           attributes: { platform },
           relationships: {
             app: { data: { type: "apps", id: appId } },
+            appStoreVersionForReview: { data: { type: "appStoreVersions", id: versionId } },
           },
         },
       }),
@@ -163,6 +164,31 @@ async function createReviewSubmission() {
     );
     if (!existing) throw error;
     return { data: existing };
+  }
+}
+
+async function setAppVersionForReview(submissionId, versionId) {
+  try {
+    const response = await api(`/v1/reviewSubmissions/${submissionId}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        data: {
+          type: "reviewSubmissions",
+          id: submissionId,
+          relationships: {
+            appStoreVersionForReview: { data: { type: "appStoreVersions", id: versionId } },
+          },
+        },
+      }),
+    });
+    console.log(`Set app version ${versionString} as the version for review.`);
+    return response;
+  } catch (error) {
+    if (isAlreadyOrNotNeeded(error)) {
+      console.log(`App version-for-review relationship appears already handled: ${compactErrors(error)}`);
+      return null;
+    }
+    throw error;
   }
 }
 
@@ -258,10 +284,11 @@ async function submitReviewSubmission(submissionId) {
 const version = await getAppStoreVersion();
 console.log(`Found Bodywise Remedy iOS ${versionString}: ${version.id} (${version.attributes?.appStoreState || "unknown state"}).`);
 
-const submission = await createReviewSubmission();
+const submission = await createReviewSubmission(version.id);
 const submissionId = submission.data.id;
 console.log(`Using review submission ${submissionId} (${submission.data.attributes?.state || "new"}).`);
 
+await setAppVersionForReview(submissionId, version.id);
 await addAppVersionToSubmission(submissionId, version.id);
 
 await bestEffortSubmitSubscriptionGroup();
@@ -271,3 +298,4 @@ for (const subscriptionId of subscriptionIds) {
 
 await submitReviewSubmission(submissionId);
 console.log("Bodywise Remedy resubmission workflow completed.");
+
