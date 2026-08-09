@@ -775,3 +775,31 @@
 .emotional-reward p{margin:0!important;color:#4e5147!important;font-size:10px!important;line-height:1.38!important;font-weight:800!important}
 .progress-hero span{max-width:100%;white-space:normal!important;line-height:1.25;text-align:left}
 @media(max-width:390px){.guidance-head{grid-template-columns:1fr}.guidance-head p{text-align:left;max-width:280px}.guidance-steps{grid-template-columns:1fr}.guidance-steps article{min-height:82px}.emotional-reward h3{font-size:22px}}
+
+
+/* Professional upgrade pack: onboarding payoff, program library, richer vault coaching and clearer premium value. */
+.setup-path-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0 6px}
+.setup-path-preview article{border:1px solid rgba(23,25,20,.1);border-radius:16px;background:#fff8e6;padding:10px;text-align:left;box-shadow:0 8px 18px rgba(23,25,20,.06)}
+.setup-path-preview b{display:block;font:600 17px/.9 var(--display);text-transform:uppercase;color:#171914}
+.setup-path-preview span{display:block;margin-top:5px;color:#62645c;font-size:8px;line-height:1.3;font-weight:850}
+.vault-level-row{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:6px!important;margin-bottom:12px!important}
+.vault-level-row span{border-radius:13px!important;background:#171914!important;color:#e8ff48!important;border:0!important;text-align:center!important;white-space:normal!important;line-height:1.15!important}
+.subscription-outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;text-align:left}
+.subscription-outcome-grid article{border:1px solid rgba(23,25,20,.12);border-radius:18px;background:#fffdf7;padding:12px;box-shadow:0 8px 18px rgba(23,25,20,.06)}
+.subscription-outcome-grid article:last-child{background:#171914;color:#fff;border-color:#171914;box-shadow:0 14px 26px rgba(23,25,20,.16)}
+.subscription-outcome-grid span{display:inline-flex;border-radius:999px;background:#eee7d8;color:#62645c;padding:6px 8px;font-size:7px;font-weight:950;text-transform:uppercase;letter-spacing:.7px}
+.subscription-outcome-grid article:last-child span{background:#e8ff48;color:#171914}
+.subscription-outcome-grid b{display:block;margin:8px 0 5px;font:600 22px/.9 var(--display);text-transform:uppercase;color:#171914}
+.subscription-outcome-grid article:last-child b{color:#fff}
+.subscription-outcome-grid small{display:block;color:#62645c;font-size:8.5px;line-height:1.35;font-weight:850}
+.subscription-outcome-grid article:last-child small{color:#d8dbcf}
+.program-library-preview{display:grid;gap:8px;margin:14px 0;padding:16px;border-radius:28px;background:linear-gradient(145deg,#fffdf7,#f1ead8);border:1px solid rgba(23,25,20,.1);box-shadow:0 14px 30px rgba(23,25,20,.08)}
+.program-library-preview>div span{display:block;color:#8a735d;font-size:8px;font-weight:950;letter-spacing:.75px;text-transform:uppercase}
+.program-library-preview>div h2{margin:7px 0 5px;font:600 31px/.9 var(--display);text-transform:uppercase;color:#171914}
+.program-library-preview>div p{margin:0;color:#62645c;font-size:10px;line-height:1.4}
+.program-library-preview article{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;border:1px solid rgba(23,25,20,.08);border-radius:18px;background:#fff8e6;padding:12px}
+.program-library-preview article b{font-size:10px;text-transform:uppercase;color:#171914;letter-spacing:.2px}
+.program-library-preview article small{color:#62645c;font-size:9px;line-height:1.35;font-weight:800}
+.vault-guide-copy b:nth-of-type(2),.vault-guide-copy b:nth-of-type(3){color:#8c321c}
+.vault-guide-copy b:nth-of-type(4){color:#4f5a13}
+@media(max-width:390px){.setup-path-preview,.subscription-outcome-grid,.vault-level-row{grid-template-columns:1fr!important}.program-library-preview>div h2{font-size:27px}}
