@@ -164,6 +164,17 @@ async function updateVersionLocalization() {
   console.log(`Updated description, keywords, URLs and promotional text for iOS ${versionString}.`);
 }
 
-await updateAppInfoLocalization();
+try {
+  await updateAppInfoLocalization();
+} catch (error) {
+  if (String(error.message || error).includes("INVALID_STATE")) {
+    console.log(
+      "App Info name/subtitle is not editable in the current Apple state. Continuing with editable version metadata.",
+    );
+  } else {
+    throw error;
+  }
+}
+
 await updateVersionLocalization();
 console.log("Bodywise Remedy discoverability metadata update completed.");
