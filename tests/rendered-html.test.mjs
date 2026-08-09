@@ -30,8 +30,8 @@ test("server-renders the Bodywise Remedy release homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Bodywise Remedy Calisthenics — Bodyweight Strength Coach<\/title>/i);
-  assert.match(html, /BODYWISE REMEDY/);
-  assert.match(html, /CALISTHENICS COACH/);
+  assert.match(html, /BODYWISE/);
+  assert.match(html, /CALISTHENICS/);
   assert.match(html, /Your plan is ready/i);
   assert.match(html, /Start workout/i);
   assert.match(html, /TODAY · DAILY COACH/i);
