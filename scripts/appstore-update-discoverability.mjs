@@ -110,6 +110,37 @@ function pickLocale(items, label) {
   return picked;
 }
 
+async function findOrCreateVersion() {
+  const versionsUrl = new URL(`/v1/apps/${appId}/appStoreVersions`, "https://api.appstoreconnect.apple.com");
+  versionsUrl.searchParams.set("filter[platform]", platform);
+  versionsUrl.searchParams.set("limit", "50");
+  const versions = await api(`${versionsUrl.pathname}${versionsUrl.search}`);
+  const existing = (versions.data || []).find(
+    (item) => item.attributes?.versionString === versionString && item.attributes?.platform === platform,
+  );
+  if (existing) return existing;
+
+  const created = await api("/v1/appStoreVersions", {
+    method: "POST",
+    body: JSON.stringify({
+      data: {
+        type: "appStoreVersions",
+        attributes: {
+          platform,
+          versionString,
+        },
+        relationships: {
+          app: {
+            data: { type: "apps", id: appId },
+          },
+        },
+      },
+    }),
+  });
+  console.log(`Created editable ${platform} App Store version ${versionString}.`);
+  return created.data;
+}
+
 async function updateAppInfoLocalization() {
   const infos = await api(`/v1/apps/${appId}/appInfos?limit=50`);
   const appInfo = infos.data?.[0];
@@ -133,16 +164,7 @@ async function updateAppInfoLocalization() {
   console.log(`Updated app name/subtitle for ${localization.attributes?.locale || locale}.`);
 }
 
-async function updateVersionLocalization() {
-  const versionsUrl = new URL(`/v1/apps/${appId}/appStoreVersions`, "https://api.appstoreconnect.apple.com");
-  versionsUrl.searchParams.set("filter[platform]", platform);
-  versionsUrl.searchParams.set("limit", "50");
-  const versions = await api(`${versionsUrl.pathname}${versionsUrl.search}`);
-  const version = (versions.data || []).find(
-    (item) => item.attributes?.versionString === versionString && item.attributes?.platform === platform,
-  );
-  if (!version) throw new Error(`Could not find ${platform} App Store version ${versionString}. Create the new version in App Store Connect first.`);
-
+async function updateVersionLocalization(version) {
   const localizations = await api(`/v1/appStoreVersions/${version.id}/appStoreVersionLocalizations?limit=50`);
   const localization = pickLocale(localizations.data || [], "app version");
   await api(`/v1/appStoreVersionLocalizations/${localization.id}`, {
@@ -164,6 +186,8 @@ async function updateVersionLocalization() {
   console.log(`Updated description, keywords, URLs and promotional text for iOS ${versionString}.`);
 }
 
+const version = await findOrCreateVersion();
+
 try {
   await updateAppInfoLocalization();
 } catch (error) {
@@ -176,5 +200,5 @@ try {
   }
 }
 
-await updateVersionLocalization();
+await updateVersionLocalization(version);
 console.log("Bodywise Remedy discoverability metadata update completed.");
