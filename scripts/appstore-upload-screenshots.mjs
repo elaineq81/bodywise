@@ -91,12 +91,12 @@ async function findVersionLocalization() {
   return localization.id;
 }
 
-async function deleteExistingScreenshotSets(localizationId, displayType) {
+async function deleteExistingScreenshotSets(localizationId) {
   const url = new URL(`/v1/appStoreVersionLocalizations/${localizationId}/appScreenshotSets`, "https://api.appstoreconnect.apple.com");
-  url.searchParams.set("filter[screenshotDisplayType]", displayType);
-  url.searchParams.set("limit", "50");
+  url.searchParams.set("limit", "200");
   const existing = await api(`${url.pathname}${url.search}`);
   for (const set of existing.data || []) {
+    const displayType = set.attributes?.screenshotDisplayType || "unknown";
     await api(`/v1/appScreenshotSets/${set.id}`, { method: "DELETE" });
     console.log(`Deleted old ${displayType} screenshot set ${set.id}.`);
   }
@@ -203,13 +203,13 @@ async function reorderScreenshots(setId, screenshotIds) {
 }
 
 const localizationId = await findVersionLocalization();
+await deleteExistingScreenshotSets(localizationId);
 
 for (const set of screenshotSets) {
   const files = await listPngFiles(set.folder);
   if (files.length === 0) throw new Error(`No screenshots found in ${set.folder}.`);
   if (files.length > 10) throw new Error(`${set.folder} contains ${files.length} screenshots; Apple allows up to 10.`);
 
-  await deleteExistingScreenshotSets(localizationId, set.displayType);
   const setId = await createScreenshotSet(localizationId, set.displayType);
   const screenshotIds = [];
   for (const file of files) {
