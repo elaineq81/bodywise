@@ -4,6 +4,8 @@ import path from "node:path";
 const root = process.cwd();
 const pagePath = path.join(root, "app", "page.tsx");
 const page = fs.readFileSync(pagePath, "utf8");
+const capacitorConfig = fs.readFileSync(path.join(root, "capacitor.config.ts"), "utf8");
+const packageJson = fs.readFileSync(path.join(root, "package.json"), "utf8");
 const failures = [];
 const warnings = [];
 const ok = [];
@@ -18,6 +20,16 @@ for (const id of ["bodywise_remedy_premium_monthly", "bodywise_remedy_premium_ye
 }
 page.includes("7-day free trial") ? pass("7-day free trial copy present") : fail("missing 7-day free trial copy");
 page.includes("trackEvent(") ? pass("local retention/event tracking hooks present") : fail("missing local tracking hooks");
+
+capacitorConfig.includes("webDir: 'dist/client'") ? pass("Capacitor uses the local app bundle") : fail("Capacitor local webDir is not configured");
+!capacitorConfig.includes("server:") ? pass("Capacitor has no remote website wrapper") : fail("Capacitor still points at a remote server");
+capacitorConfig.includes("scheme: 'App'") ? pass("Capacitor matches the shared Xcode App scheme") : fail("Capacitor iOS scheme does not match Xcode");
+exists("scripts/export-capacitor.mjs") && packageJson.includes("npm run ios:export")
+  ? pass("iOS build exports a local HTML entry before sync")
+  : fail("iOS build does not create a local Capacitor entry page");
+page.includes("window.location.assign(`/${slug}.html`)")
+  ? pass("native legal links use concrete bundled HTML files")
+  : fail("native legal links can fall through to the Capacitor homepage");
 
 for (const rel of ["app/privacy/page.tsx", "app/support/page.tsx", "app/terms/page.tsx"]) {
   exists(rel) ? pass(`${rel} exists`) : fail(`${rel} missing`);

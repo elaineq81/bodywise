@@ -6,9 +6,9 @@ import "./provider-platform.css";
 
 export const metadata:Metadata={
  metadataBase:new URL("https://bodywise-snowy.vercel.app"),
- title:"Bodywise Remedy — Your adaptive calisthenics coach",
- description:"Coach-guided, adaptive calisthenics plans with realistic movement demonstrations, recovery guidance, progressions and accessible session controls.",
- openGraph:{title:"Bodywise Remedy — Train with purpose",description:"Adaptive calisthenics coaching built around your goals, readiness and schedule.",images:[{url:"/og.png",width:1792,height:896,alt:"Bodywise Remedy adaptive calisthenics coach"}]},
+ title:"Bodywise Remedy Calisthenics — Bodyweight Strength Coach",
+ description:"Calisthenics and bodyweight training app with safer daily workouts built around your goal, age, level, body condition, recovery needs, and progress.",
+ openGraph:{title:"Bodywise Remedy Calisthenics",description:"Bodyweight strength coaching built around your goals, readiness, body condition and schedule.",images:[{url:"/og.png",width:1792,height:896,alt:"Bodywise Remedy Calisthenics bodyweight strength coach"}]},
  twitter:{card:"summary_large_image",images:["/og.png"]},
  icons:{icon:"/favicon.svg",apple:"/apple-touch-icon.png"}
 };

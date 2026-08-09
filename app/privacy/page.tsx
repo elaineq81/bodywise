@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const metadata = {
   title: "Privacy Policy — Bodywise Remedy",
   description: "How Bodywise Remedy handles workout preferences, check-ins, progress, and app usage data.",
@@ -8,25 +6,28 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <main className="policy-page">
-      <Link className="policy-back" href="/">← Back to Bodywise Remedy</Link>
+      {/* Capacitor's static export needs a plain anchor instead of Next's client router. */}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      <a className="policy-back" href="/">← Back to Bodywise Remedy</a>
       <section className="policy-hero">
         <p className="eyebrow">PRIVACY POLICY</p>
         <h1>Body-aware guidance, privacy-aware design.</h1>
         <p>
           Bodywise Remedy is designed to give useful workout guidance without asking for more personal information than the app needs.
         </p>
-        <small>Last updated: July 31, 2026</small>
+        <small>Last updated: August 6, 2026</small>
       </section>
 
       <section className="policy-card">
         <h2>What the app currently stores</h2>
         <p>
           The current app experience can store your selected goal, age range, sex selection, experience level, pain or limitation preference,
-          mood/body check-ins, workout feedback, session count, estimated training load, and lightweight app events such as onboarding, workout start, workout completion, and paywall views. These are used to personalize the next workout and understand whether the app is useful.
+          mood/body check-ins, workout feedback, session count, estimated training load, and lightweight local app events such as onboarding,
+          workout start, workout completion, and paywall views. These are used to personalize the next workout and make your progress easier to understand.
         </p>
         <p>
-          At this stage, these workout preferences and progress signals are stored locally on your device/browser unless a future account sync
-          feature is clearly introduced.
+          In this version, workout preferences, body check-ins, feedback, and progress signals are stored on your device/browser. They are not sent
+          to Bodywise Remedy servers unless a future optional account sync or analytics feature is clearly introduced with updated disclosures and consent.
         </p>
       </section>
 
@@ -52,7 +53,7 @@ export default function PrivacyPage() {
       <section className="policy-card">
         <h2>Network and media</h2>
         <p>
-          The app may make standard network requests to load the app, workout videos, images, and technical status checks. Hosting providers may
+          The app may make standard network requests to load the app, workout videos, and images. Hosting providers may
           process basic technical data such as IP address, device/browser type, timestamps, and error logs for security and reliability.
         </p>
         <p>

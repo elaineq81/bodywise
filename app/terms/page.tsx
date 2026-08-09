@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const metadata = {
   title: "Terms — Bodywise Remedy",
   description: "Terms and safety information for using Bodywise Remedy.",
@@ -8,12 +6,14 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <main className="policy-page">
-      <Link className="policy-back" href="/">← Back to Bodywise Remedy</Link>
+      {/* Capacitor's static export needs a plain anchor instead of Next's client router. */}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      <a className="policy-back" href="/">← Back to Bodywise Remedy</a>
       <section className="policy-hero">
         <p className="eyebrow">TERMS</p>
         <h1>Use Bodywise Remedy as guidance, not medical advice.</h1>
         <p>These terms summarize the key conditions for using the current Bodywise Remedy app experience.</p>
-        <small>Last updated: July 31, 2026</small>
+        <small>Last updated: August 6, 2026</small>
       </section>
 
       <section className="policy-card">

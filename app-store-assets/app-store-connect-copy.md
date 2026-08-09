@@ -1,19 +1,21 @@
 # Bodywise Remedy — App Store Connect Copy Pack
 
 ## App name
-Bodywise Remedy
+Bodywise Remedy Calisthenics
 
 ## Subtitle
-Adaptive calisthenics plans
+Bodyweight Strength Coach
 
 ## Promotional text
-Start with a quick body check, choose your training target, and get a bodyweight session shaped around your goal, readiness and limitations.
+Start with a safer daily bodyweight plan, then unlock your personal 4-week strength path.
 
 ## Short value proposition
 Workout guidance that adapts to your body — not just your motivation.
 
 ## Description
-Bodywise Remedy is a mobile calisthenics coach for people who want clear, body-aware training without feeling overwhelmed.
+Bodywise Remedy is a calisthenics and bodyweight training app that builds safer daily workouts around your goal, age, level, and body condition.
+
+It is made for people who want clear, body-aware training without feeling overwhelmed.
 
 Choose your main target — core control, knee confidence, arm strength, upper body, lower body, mobility or full-body foundation — then start a guided bodyweight session built around your readiness, available time and movement needs.
 
@@ -32,7 +34,7 @@ Premium unlocks a more complete strength path with weekly progression, saved pro
 Bodywise Remedy is general fitness guidance, not medical care. Stop if a movement causes sharp pain and consult a qualified professional if you have an injury or medical concern.
 
 ## Keywords
-calisthenics,bodyweight,workout,fitness,core,knee,plank,pushup,squat,mobility,strength,home workout,training
+bodyweight,home workout,core,knee,strength,mobility,fitness,beginner,exercise,rehab
 
 ## Screenshot captions
 1. Train with a plan made for your body.

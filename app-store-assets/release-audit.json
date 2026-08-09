@@ -1,11 +1,16 @@
 {
-  "generatedAt": "2026-07-31T09:22:10.371Z",
+  "generatedAt": "2026-08-09T02:59:19.817Z",
   "status": "pass",
   "passed": [
     "subscription product present: bodywise_remedy_premium_monthly",
     "subscription product present: bodywise_remedy_premium_yearly",
     "7-day free trial copy present",
     "local retention/event tracking hooks present",
+    "Capacitor uses the local app bundle",
+    "Capacitor has no remote website wrapper",
+    "Capacitor matches the shared Xcode App scheme",
+    "iOS build exports a local HTML entry before sync",
+    "native legal links use concrete bundled HTML files",
     "app/privacy/page.tsx exists",
     "app/support/page.tsx exists",
     "app/terms/page.tsx exists",

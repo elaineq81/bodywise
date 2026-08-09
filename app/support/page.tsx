@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const metadata = {
   title: "Support — Bodywise Remedy",
   description: "Get help with Bodywise Remedy workouts, subscriptions, safety, and app access.",
@@ -8,7 +6,9 @@ export const metadata = {
 export default function SupportPage() {
   return (
     <main className="policy-page">
-      <Link className="policy-back" href="/">← Back to Bodywise Remedy</Link>
+      {/* Capacitor's static export needs a plain anchor instead of Next's client router. */}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      <a className="policy-back" href="/">← Back to Bodywise Remedy</a>
       <section className="policy-hero">
         <p className="eyebrow">SUPPORT</p>
         <h1>We want Bodywise Remedy to feel simple, safe, and clear.</h1>

@@ -9,15 +9,17 @@
     "dev": "node scripts/vinext.mjs dev",
     "build": "node scripts/vinext.mjs build",
     "start": "node scripts/vinext.mjs start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build && npm run ios:export && node --test tests/rendered-html.test.mjs && tsx --test tests/workout-engine.test.ts",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "db:seed": "node --loader tsx/esm db/seed.ts",
-    "ios:build": "npm run build && npx cap sync ios",
+    "ios:export": "node scripts/export-capacitor.mjs",
+    "ios:build": "npm run build && npm run ios:export && npx cap sync ios",
     "ios:add": "npx cap add ios",
-    "ios:sync": "npm run build && npx cap sync ios",
+    "ios:sync": "npm run build && npm run ios:export && npx cap sync ios",
     "ios:open": "npx cap open ios",
-    "audit:release": "node scripts/release-audit.mjs"
+    "audit:release": "node scripts/release-audit.mjs",
+    "appstore:update-discoverability": "node scripts/appstore-update-discoverability.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.4.2",
