@@ -825,3 +825,25 @@
 .next-action-reward b{display:block;font-size:20px;line-height:1.05;text-transform:uppercase;color:#fff}
 .next-action-reward p{margin:8px 0 0!important;color:#c7ccb9!important;font-size:12px!important;line-height:1.4!important}
 @media(max-width:390px){.coach-flow-strip{gap:5px;padding:6px}.coach-flow-strip span{font-size:8px}.session-intent-card{padding:12px 13px}.next-action-reward b{font-size:18px}}
+
+/* iPhone workout-session safe zone: never place close/save controls inside the status bar or Dynamic Island area. */
+.session{
+  box-sizing:border-box!important;
+  padding-top:max(58px,calc(env(safe-area-inset-top,0px) + 28px))!important;
+  padding-left:max(20px,env(safe-area-inset-left,0px))!important;
+  padding-right:max(20px,env(safe-area-inset-right,0px))!important;
+  padding-bottom:max(26px,calc(env(safe-area-inset-bottom,0px) + 26px))!important;
+  scroll-padding-top:max(58px,calc(env(safe-area-inset-top,0px) + 28px))!important;
+}
+.session header{
+  min-height:58px!important;
+  height:auto!important;
+  padding-top:0!important;
+  position:relative!important;
+  z-index:2!important;
+}
+.session header button{flex:0 0 38px!important;width:38px!important;height:38px!important}
+@media(max-width:390px){
+  .session{padding-top:max(64px,calc(env(safe-area-inset-top,0px) + 32px))!important}
+  .session header{min-height:62px!important}
+}

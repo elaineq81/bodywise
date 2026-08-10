@@ -48,8 +48,9 @@ test("server-renders the Bodywise Remedy release homepage", async () => {
 });
 
 test("keeps release-critical wiring in source", async () => {
-  const [page, layout, packageJson, capacitorConfig, capacitorExporter, bundledHome, bundledPrivacy, bundledTerms, screenshots] = await Promise.all([
+  const [page, css, layout, packageJson, capacitorConfig, capacitorExporter, bundledHome, bundledPrivacy, bundledTerms, screenshots] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../capacitor.config.ts", import.meta.url), "utf8"),
@@ -73,6 +74,8 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /COACH MODE/);
   assert.match(page, /NEXT BEST ACTION/);
   assert.match(page, /Do my next best workout/);
+  assert.match(css, /iPhone workout-session safe zone/);
+  assert.match(css, /\.session\{[\s\S]*safe-area-inset-top/);
   assert.match(packageJson, /"audit:release"/);
   assert.match(packageJson, /npm run ios:export/);
   assert.match(capacitorConfig, /webDir: 'dist\/client'/);
