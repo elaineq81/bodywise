@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T02:59:19.817Z",
+  "generatedAt": "2026-08-10T03:25:45.706Z",
   "status": "pass",
   "passed": [
     "subscription product present: bodywise_remedy_premium_monthly",
@@ -22,7 +22,7 @@
     "49 move definitions have approved media markers",
     "51 Move Vault entries have direct visuals",
     "61 referenced local media assets exist",
-    "5 App Store screenshots found at 1242x2688",
+    "10 App Store screenshots found at 1242x2688",
     "medical safety language present"
   ],
   "warnings": [],

@@ -66,6 +66,9 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /trackEvent\(/);
   assert.match(page, /workout_completed/);
   assert.match(page, /paywall_open/);
+  assert.match(page, /Audio coach/);
+  assert.match(page, /speechSynthesis/);
+  assert.match(page, /bodywise-audio-coach/);
   assert.match(packageJson, /"audit:release"/);
   assert.match(packageJson, /npm run ios:export/);
   assert.match(capacitorConfig, /webDir: 'dist\/client'/);
@@ -80,6 +83,6 @@ test("keeps release-critical wiring in source", async () => {
   assert.equal(capacitorRoute("/privacy"), "/index.html");
   assert.equal(capacitorRoute("/privacy.html"), "/privacy.html");
   assert.match(page, /window\.location\.assign\(`\/\$\{slug\}\.html`\)/);
-  assert.equal(screenshots.filter(name => name.endsWith(".png")).length, 5);
+  assert.equal(screenshots.filter(name => name.endsWith(".png")).length, 10);
   assert.doesNotMatch(page, /REAL HUMAN LOOP|REAL PERSON VIDEO|↻ EXACT DEMO|↻ BODYWISE DEMO|↻ EXACT VIDEO/);
 });
