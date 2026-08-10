@@ -38,6 +38,7 @@ test("server-renders the Bodywise Remedy release homepage", async () => {
   assert.match(html, /Not checked today/i);
   assert.match(html, /FIRST WIN BEFORE PREMIUM/i);
   assert.match(html, /NEXT BEST ACTION/);
+  assert.match(html, /Start workout/i);
   assert.match(html, /Body Confidence Path/i);
   assert.match(html, /Clear movement previews/i);
   assert.match(html, /Privacy/);
@@ -69,6 +70,9 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /Audio coach/);
   assert.match(page, /speechSynthesis/);
   assert.match(page, /bodywise-audio-coach/);
+  assert.match(page, /COACH MODE/);
+  assert.match(page, /NEXT BEST ACTION/);
+  assert.match(page, /Do my next best workout/);
   assert.match(packageJson, /"audit:release"/);
   assert.match(packageJson, /npm run ios:export/);
   assert.match(capacitorConfig, /webDir: 'dist\/client'/);

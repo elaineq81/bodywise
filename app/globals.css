@@ -809,3 +809,19 @@
 .audio-toggle small{color:#d9ddce!important}
 .session-tools .audio-on{background:#e8ff48!important;color:#171914!important;border-color:#e8ff48!important;box-shadow:0 10px 22px rgba(232,255,72,.24)!important}
 .audio-caption{margin:10px 0 0;padding:10px 12px;border-radius:16px;background:rgba(232,255,72,.12);border:1px solid rgba(232,255,72,.26);color:#e8ff48;font-size:10px;font-weight:900;letter-spacing:.3px;text-transform:uppercase}
+
+/* Coach mode upgrade: guided flow, clearer next action, and warmer completion reward. */
+.coach-flow-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0 14px;padding:8px;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.coach-flow-strip span{display:flex;align-items:center;justify-content:center;gap:5px;min-height:34px;border-radius:16px;color:#9ba092;font-size:9px;font-weight:950;letter-spacing:.7px;text-transform:uppercase;background:rgba(255,255,255,.04)}
+.coach-flow-strip span i{width:6px;height:6px;border-radius:99px;background:currentColor;opacity:.7}
+.coach-flow-strip .now{background:#e8ff48;color:#151711;box-shadow:0 10px 22px rgba(232,255,72,.18)}
+.coach-flow-strip .done{background:rgba(232,255,72,.16);color:#e8ff48}
+.session-intent-card{margin:0 0 14px;padding:14px 16px;border-radius:24px;background:linear-gradient(135deg,rgba(232,255,72,.14),rgba(255,255,255,.06));border:1px solid rgba(232,255,72,.24);color:#f8f7ef}
+.session-intent-card span,.next-action-reward span{display:block;margin-bottom:5px;color:#e8ff48;font-size:10px;font-weight:950;letter-spacing:1.5px;text-transform:uppercase}
+.session-intent-card b{display:block;font-size:14px;line-height:1.28;color:#fff}
+.cue small{display:block;margin-top:10px;color:#e8ff48;font-size:10px;font-weight:950;letter-spacing:.7px;text-transform:uppercase}
+.finish-hero-copy{font-size:15px!important;line-height:1.45!important;color:#3d4036!important}
+.next-action-reward{margin:12px 0;padding:16px;border-radius:26px;background:#141711;color:#fff;text-align:left;box-shadow:0 16px 32px rgba(0,0,0,.12)}
+.next-action-reward b{display:block;font-size:20px;line-height:1.05;text-transform:uppercase;color:#fff}
+.next-action-reward p{margin:8px 0 0!important;color:#c7ccb9!important;font-size:12px!important;line-height:1.4!important}
+@media(max-width:390px){.coach-flow-strip{gap:5px;padding:6px}.coach-flow-strip span{font-size:8px}.session-intent-card{padding:12px 13px}.next-action-reward b{font-size:18px}}
