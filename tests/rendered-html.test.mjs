@@ -74,6 +74,7 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /COACH MODE/);
   assert.match(page, /NEXT BEST ACTION/);
   assert.match(page, /Do my next best workout/);
+  assert.match(page, /Coach-guided movement/);
   assert.match(css, /iPhone workout-session safe zone/);
   assert.match(css, /\.session\{[\s\S]*safe-area-inset-top/);
   assert.match(packageJson, /"audit:release"/);
@@ -92,4 +93,5 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /window\.location\.assign\(`\/\$\{slug\}\.html`\)/);
   assert.equal(screenshots.filter(name => name.endsWith(".png")).length, 10);
   assert.doesNotMatch(page, /REAL HUMAN LOOP|REAL PERSON VIDEO|↻ EXACT DEMO|↻ BODYWISE DEMO|↻ EXACT VIDEO/);
+  assert.doesNotMatch(page, /Preview being prepared|MEDIA QUEUED|being prepared with clearer guidance/);
 });
