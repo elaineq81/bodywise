@@ -70,6 +70,9 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /paywall_open/);
   assert.match(page, /Audio coach/);
   assert.match(page, /speechSynthesis/);
+  assert.match(page, /unlockAudio/);
+  assert.match(page, /Sound is on/);
+  assert.match(page, /playTimerTone\("countdown"/);
   assert.match(page, /bodywise-audio-coach/);
   assert.match(page, /bodywise-haptic-coach/);
   assert.match(page, /bodywise-calm-mode/);
