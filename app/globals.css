@@ -847,3 +847,8 @@
   .session{padding-top:max(64px,calc(env(safe-area-inset-top,0px) + 32px))!important}
   .session header{min-height:62px!important}
 }
+
+/* Native-feel tactile cues for iPhone workout flow. */
+.haptic-toggle{border-color:rgba(232,255,72,.32)!important;background:linear-gradient(135deg,#201f18,#312f25)!important;color:#fff!important}
+.haptic-toggle small{color:#d9d3c5!important}
+.session-tools .haptic-on{background:#fff8df!important;color:#171914!important;border-color:#e8ff48!important;box-shadow:0 10px 22px rgba(255,248,223,.18)!important}

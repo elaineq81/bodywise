@@ -71,6 +71,9 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /Audio coach/);
   assert.match(page, /speechSynthesis/);
   assert.match(page, /bodywise-audio-coach/);
+  assert.match(page, /bodywise-haptic-coach/);
+  assert.match(page, /@capacitor\/haptics/);
+  assert.match(page, /Tactile cues/);
   assert.match(page, /COACH MODE/);
   assert.match(page, /NEXT BEST ACTION/);
   assert.match(page, /Do my next best workout/);
