@@ -72,6 +72,13 @@ test("keeps release-critical wiring in source", async () => {
   assert.match(page, /speechSynthesis/);
   assert.match(page, /bodywise-audio-coach/);
   assert.match(page, /bodywise-haptic-coach/);
+  assert.match(page, /bodywise-calm-mode/);
+  assert.match(page, /Calm visual mode/);
+  assert.match(page, /First-week path/);
+  assert.match(page, /SUBSCRIPTION STATUS/);
+  assert.match(page, /Internal media QA/);
+  assert.match(page, /bodywise-media-qa/);
+  assert.match(page, /Manage Apple subscriptions/);
   assert.match(page, /@capacitor\/haptics/);
   assert.match(page, /Tactile cues/);
   assert.match(page, /COACH MODE/);
